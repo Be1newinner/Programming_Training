@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Application Form</title>
+</head>
+<body>
+    <h1>Welcome to XYZ Bank</h1>
+    <p>Please fill out the following information to open a new bank account:</p>
+    
+    <form action="submit_application.php" method="POST">
+        <table>
+            <tr>
+                <td><label for="full_name">Full Name:</label></td>
+                <td><input type="text" id="full_name" name="full_name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="account_type">Account Type:</label></td>
+                <td>
+                    <input type="radio" id="checking" name="account_type" value="checking">
+                    <label for="checking">Checking</label>
+                    <input type="radio" id="savings" name="account_type" value="savings">
+                    <label for="savings">Savings</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="balance">Initial Deposit:</label></td>
+                <td><input type="text" id="balance" name="balance"></td>
+            </tr>
+            <tr>
+                <td><label for="terms_conditions">Terms and Conditions:</label></td>
+                <td><input type="checkbox" id="terms_conditions" name="terms_conditions"> I agree to the terms and conditions</td>
+            </tr>
+            <tr>
+                <td><label for="opening_time">Preferred Opening Time:</label></td>
+                <td><input type="time" id="opening_time" name="opening_time"></td>
+            </tr>
+            <tr>
+                <td><label for="opening_date">Preferred Opening Date:</label></td>
+                <td><input type="date" id="opening_date" name="opening_date"></td>
+            </tr>
+        </table>
+        
+        <p>Please upload a valid ID:</p>
+        <input type="file" id="id_upload" name="id_upload">
+        
+        <p>Additional comments:</p>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        
+        <p>By submitting this form, you agree to our <a href="terms_and_conditions.html">Terms and Conditions</a>.</p>
+        
+        <a href="https://www.examplebank.com"><img src="bank_logo.jpg" alt="XYZ Bank"></a>
+        
+        <input type="button" value="Submit Application">
+    </form>
+</body>
+</html>

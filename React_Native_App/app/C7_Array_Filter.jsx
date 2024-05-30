@@ -7,22 +7,27 @@ function App() {
     {
       title: "Vijay0",
       price: 20,
+      category: "man",
     },
     {
       title: "Vijay1",
       price: 21,
+      category: "man",
     },
     {
       title: "Vijay2",
       price: 22,
+      category: "woman",
     },
     {
       title: "Vijay3",
       price: 23,
+      category: "woman",
     },
     {
       title: "Vijay4",
       price: 24,
+      category: "kid",
     },
   ]);
 
