@@ -1,11 +1,7 @@
-import { Text, View } from "react-native";
+import { Redirect } from "expo-router";
 
 function App() {
-  return (
-    <View>
-      <Text>Hello</Text>
-    </View>
-  );
+  return <Redirect href="C11_Prototype_Ecommerce_ProductApp" />;
 }
 
 export default App;
