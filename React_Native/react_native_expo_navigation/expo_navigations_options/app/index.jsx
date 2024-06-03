@@ -1,7 +1,33 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Link, useRouter } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function App() {
+  const router = useRouter();
+
+  function RouteToContact() {
+    // router.push("contact");
+    // router.replace("contact");
+    // const canGoBack = router.canGoBack();
+    // console.log(canGoBack);
+    // if (canGoBack) {
+    //   router.back();
+    // } else {
+    //   console.log("Can't GO Back!");
+    // }
+    //push with some data
+
+    router.push({
+      pathname: "about",
+      params: {
+        user: "Vijay kumar",
+        id: 75,
+        data: {
+          some: "More Data",
+        },
+      },
+    });
+  }
+
   return (
     <View
       style={{
@@ -32,6 +58,21 @@ export default function App() {
       <Link href={"about"} replace style={{ color: "blue" }}>
         About Us
       </Link>
+
+      <Pressable
+        style={{
+          backgroundColor: "red",
+          width: 120,
+          textAlign: "center",
+          margin: 10,
+          padding: 10,
+          elevation: 10,
+          borderRadius: 10,
+        }}
+        onPress={RouteToContact}
+      >
+        <Text>Go to About Screen using function</Text>
+      </Pressable>
     </View>
   );
 }

@@ -1,7 +1,15 @@
-import { Link } from "expo-router";
+import { Link, useGlobalSearchParams, useLocalSearchParams } from "expo-router";
+import { useRoute } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function AboutUs() {
+  // Recieve Props using if any
+
+  const navigate = useLocalSearchParams();
+  const navigate2 = useGlobalSearchParams();
+  console.log(navigate);
+  console.log(navigate2);
+
   return (
     <View
       style={{
