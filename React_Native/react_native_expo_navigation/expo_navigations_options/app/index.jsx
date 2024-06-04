@@ -7,25 +7,24 @@ export default function App() {
   function RouteToContact() {
     // router.push("contact");
     // router.replace("contact");
-    // const canGoBack = router.canGoBack();
+    const canGoBack = router.canGoBack();
     // console.log(canGoBack);
-    // if (canGoBack) {
-    //   router.back();
-    // } else {
-    //   console.log("Can't GO Back!");
-    // }
+    if (canGoBack) {
+      router.back();
+    } else {
+      console.log("Can't GO Back!");
+    }
     //push with some data
-
-    router.push({
-      pathname: "about",
-      params: {
-        user: "Vijay kumar",
-        id: 75,
-        data: {
-          some: "More Data",
-        },
-      },
-    });
+    //   router.push({
+    //     pathname: "about",
+    //     params: {
+    //       user: "Vijay kumar",
+    //       id: 75,
+    //       data: {
+    //         some: "More Data",
+    //       },
+    //     },
+    //   });
   }
 
   return (
