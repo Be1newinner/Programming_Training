@@ -1,4 +1,5 @@
-import { Link, Stack, useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
+import { Drawer } from "expo-router/drawer";
 import { useLayoutEffect } from "react";
 import { Text, View } from "react-native";
 
@@ -19,11 +20,12 @@ export default function AboutUs() {
         height: "100%",
       }}
     >
-      {/* <Stack.Screen
+      <Drawer.Screen
         options={{
-          title: "Contacast",
+          title: "sa",
+          drawerLabel: "some",
         }}
-      /> */}
+      />
       <Text
         style={{
           fontSize: 20,

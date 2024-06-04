@@ -1,63 +1,50 @@
-import { Stack } from "expo-router";
-import { useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { Drawer } from "expo-router/drawer";
 import { Text, View } from "react-native";
 
-export default function RootLayout() {
+export default function Layout() {
   return (
-    <Stack
-      screenOptions={
-        {
-          // headerStyle: {
-          //   backgroundColor: "red",
-          // },
-          // headerTintColor: "blue",
-          // headerRight: (props) => {
-          //   console.log(props);
-          //   return (
-          //     <View>
-          //       <Text>Show Menu</Text>
-          //     </View>
-          //   );
-          // },
-          // title: "soe",
-          // headerTitle: (e) => (
-          //   <Text>
-          //     {e.children.includes("/") ? e.children.split("/")[0] : e.children}
-          //   </Text>
-          // ),
-          // headerSearchBarOptions: {
-          //   onChangeText: (e) => console.log(e.nativeEvent.text),
-          //   onSearchButtonPress: (e) => console.log("Pressed"),
-          // },
-          // contentInsetAdjustmentBehavior: "automatic",
-          // headerTransparent: false,
-          // header: (e) => {
-          //   return (
-          //     <View>
-          //       <Text>Header</Text>
-          //     </View>
-          //   );
-          // },
-          // animation: "slide_from_bottom",
-          // orientation: "all",
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer
+        screenOptions={
+          {
+            // header:()=><Text></Text>
+            // title:"asd"
+            // drawerLabel: "Label",
+            // drawerLabel: (e) => <Text>{"Something"}</Text>,
+            // drawerActiveTintColor: "red",
+            // drawerActiveBackgroundColor: "blue",
+            // drawerInactiveTintColor
+            // drawerInactiveBackgroundColor
+            // drawerItemStyle: {
+            // backgroundColor: "pink",
+            // elevation: 5,
+            // height: 50,
+            // },
+            // drawerLabelStyle: {
+            //   color: "red",
+            //   backgroundColor: "red",
+            // },
+            // drawerContentContainerStyle: {
+            //   gap: 50,
+            //   backgroundColor: "red",
+            //   width: 200,
+            // },
+            // drawerContentStyle: {
+            // backgroundColor:"blue"
+            // },
+            // drawerStyle: {
+            //   backgroundColor: "pink",
+            //   width: 200,
+            // },
+            // drawerPosition: "right",
+            // drawerType: "back",
+            // drawerHideStatusBarOnOpen: true,
+            // overlayColor:"red"
+            // swipeEnabled: false,
+          }
         }
-      }
-    >
-      <Stack.Screen
-        name="contact/index"
-        options={{
-          title: "Contact",
-        }}
-        getId={({ params }) => String(Date.now())}
       />
-    </Stack>
+    </GestureHandlerRootView>
   );
-}
-
-//Main Stack Style Options
-// using screenOptions
-
-// optional to pass screen based custom styling
-export function RootLayout2() {
-  return <Stack />;
 }
