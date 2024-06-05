@@ -56,6 +56,13 @@ const App = () => {
           );
         }}
         data={DATA}
+        ListEmptyComponent={() => {
+          return (
+            <View>
+              <Text>List is Empty!</Text>
+            </View>
+          );
+        }}
         renderItem={({ item }, index) => {
           return (
             <View
