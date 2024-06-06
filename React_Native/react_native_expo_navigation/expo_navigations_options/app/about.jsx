@@ -1,14 +1,15 @@
 import { Link, useGlobalSearchParams, useLocalSearchParams } from "expo-router";
-import { useRoute } from "expo-router";
+// import { useRoute } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function AboutUs() {
   // Recieve Props using if any
 
   const navigate = useLocalSearchParams();
-  const navigate2 = useGlobalSearchParams();
+  // const navigate2 = useGlobalSearchParams();
   console.log(navigate);
-  console.log(navigate2);
+  // alert(navigate.name);
+  // console.log(navigate2);
 
   return (
     <View
@@ -23,7 +24,7 @@ export default function AboutUs() {
           fontWeight: 600,
         }}
       >
-        I am About Screen
+        I am About Screen. Hello {navigate.name}
       </Text>
 
       <Text style={{ margin: 10 }}>Normal Navigation</Text>

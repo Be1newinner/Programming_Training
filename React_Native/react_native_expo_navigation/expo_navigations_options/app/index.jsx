@@ -6,6 +6,7 @@ export default function App() {
 
   function RouteToContact() {
     // router.push("contact");
+    // router.navigate("contact");
     // router.replace("contact");
     // const canGoBack = router.canGoBack();
     // console.log(canGoBack);
@@ -18,11 +19,7 @@ export default function App() {
     router.push({
       pathname: "about",
       params: {
-        user: "Vijay kumar",
-        id: 75,
-        data: {
-          some: "More Data",
-        },
+        name: "Vijay kumar",
       },
     });
   }
@@ -47,7 +44,15 @@ export default function App() {
       <Link href={"contact"} style={{ color: "blue" }}>
         Contact Us
       </Link>
-      <Link href={"about"} style={{ color: "blue" }}>
+      <Link
+        href={{
+          pathname: "about",
+          params: {
+            name: "Vijay",
+          },
+        }}
+        style={{ color: "blue" }}
+      >
         About Us
       </Link>
       <Text style={{ margin: 10 }}>Replace Navigation</Text>

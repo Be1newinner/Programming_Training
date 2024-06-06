@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 
 int main()
 {
@@ -20,5 +21,7 @@ int main()
 
   printf("Name: %s\n", name);
   // printf("Name: %s\nAge: %d\nHeight: %.2f\n", name, age, height);
+
+  getch();
   return 0;
 }
