@@ -63,7 +63,7 @@ const App = () => {
             </View>
           );
         }}
-        renderItem={({ item }, index) => {
+        renderItem={({ item, index }) => {
           return (
             <View
               style={{

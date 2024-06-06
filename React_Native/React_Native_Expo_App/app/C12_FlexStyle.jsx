@@ -45,6 +45,7 @@ function App() {
           // flexBasis: "40%",
           flexBasis: "30%",
           flexShrink: 1,
+          order: 4,
         }}
       >
         <Text

@@ -1,6 +1,8 @@
 import { Stack } from "expo-router";
-import { useState } from "react";
-import { Text, View } from "react-native";
+
+export function RootLayout() {
+  return <Stack />;
+}
 
 export default function RootLayout() {
   return (
@@ -54,10 +56,10 @@ export default function RootLayout() {
   );
 }
 
+import { useState } from "react";
+import { Text, View } from "react-native";
+
 //Main Stack Style Options
 // using screenOptions
 
 // optional to pass screen based custom styling
-export function RootLayout2() {
-  return <Stack />;
-}
