@@ -1,15 +1,22 @@
-import { Link, useGlobalSearchParams, useLocalSearchParams } from "expo-router";
-// import { useRoute } from "expo-router";
+import { Link, useLocalSearchParams, useRouter } from "expo-router";
 import { Text, View } from "react-native";
 
 export default function AboutUs() {
   // Recieve Props using if any
-
   const navigate = useLocalSearchParams();
-  // const navigate2 = useGlobalSearchParams();
+  const router = useRouter();
+
   console.log(navigate);
-  // alert(navigate.name);
-  // console.log(navigate2);
+
+  function goBack() {
+    const canGoBack = router.canGoBack();
+    console.log(canGoBack);
+    if (canGoBack) {
+      router.back();
+    } else {
+      console.log("Can't GO Back!");
+    }
+  }
 
   return (
     <View
@@ -41,6 +48,8 @@ export default function AboutUs() {
       <Link href={"/"} replace style={{ color: "blue" }}>
         Home Screen
       </Link>
+
+      <Text onPress={goBack}>Go Back</Text>
     </View>
   );
 }

@@ -1,9 +1,9 @@
-import { Link, Stack, useNavigation } from "expo-router";
-import { useLayoutEffect } from "react";
+import { Link, Stack } from "expo-router";
+import { useLayoutEffect, useState } from "react";
 import { Text, View } from "react-native";
 
 export default function AboutUs() {
-  // const navigation = useNavigation();
+  const [UserName, setUserName] = useState("Vijay");
 
   // useLayoutEffect(() => {
   //   navigation.setOptions({
@@ -19,11 +19,11 @@ export default function AboutUs() {
         height: "100%",
       }}
     >
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{
-          title: "Contacast",
+          title: "hello, " + UserName,
         }}
-      /> */}
+      />
       <Text
         style={{
           fontSize: 20,
