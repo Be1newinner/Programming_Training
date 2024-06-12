@@ -3,7 +3,7 @@ import { useLayoutEffect, useState } from "react";
 import { Text, View } from "react-native";
 
 export default function AboutUs() {
-  const [UserName, setUserName] = useState("Vijay");
+  const [UserName, setUserName] = useState("Ajay");
 
   // useLayoutEffect(() => {
   //   navigation.setOptions({

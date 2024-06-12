@@ -1,4 +1,29 @@
+import { useState } from "react";
+
 export default function Transform() {
+  const [image, setImage] = useState("");
+
+  async function fetchData() {
+    try {
+      const data = await fetch("https://dog.ceo/api/breeds/image/random");
+      const response = await data.json();
+
+      if (response.status === "success") {
+        setImage(response.message);
+      }
+
+      console.log(response);
+    } 
+    catch (error) {
+      console.log(error);
+    }
+    // finally {
+    //   console.log("LEGTH");
+    // }
+  }
+
+  fetchData();
+
   return (
     <div
       style={{
@@ -16,10 +41,13 @@ export default function Transform() {
         // transform: "skewY(50deg)",
 
         // 3D Transformation
+
         marginLeft: "auto",
         marginRight: "auto",
       }}
     >
+      {image}
+      <img src={image} height={500} width={500} />
       <p> Test</p>
     </div>
   );

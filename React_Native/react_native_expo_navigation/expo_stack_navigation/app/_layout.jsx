@@ -1,11 +1,13 @@
-import { Stack } from "expo-router";
-import { Text, View } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import { Pressable, Text, View } from "react-native";
 
 export default function RootLayout2() {
+  const router = useRouter();
   return (
     <View
       style={{
         height: "100%",
+        backgroundColor: "red",
       }}
     >
       <View
@@ -18,18 +20,22 @@ export default function RootLayout2() {
       </View>
       <Stack
         screenOptions={{
-          headerStyle: {
-            backgroundColor: "blue",
-          },
+          // headerStyle: {
+          //   backgroundColor: "blue",
+          // },
           headerTintColor: "red",
-          headerRight: () => {
+          headerLeft: () => null,
+          headerRight: (props) => {
+            console.log(props);
             return (
-              <View>
-                <Text>Menu</Text>
-              </View>
+              <Pressable onPress={() => router.back()}>
+                <Text>{props.canGoBack ? "GO BACK" : "HOME"}</Text>
+              </Pressable>
             );
           },
-          headerShown: false,
+          // headerShown: false,
+          // headerTransparent: true,
+          // orientation: "landscape",
         }}
       >
         <Stack.Screen
@@ -38,6 +44,12 @@ export default function RootLayout2() {
             title: "Contact Us",
           }}
           // getId={({ params }) => String(Date.now())}
+        />
+        <Stack.Screen
+          name="index"
+          options={{
+            title: "Home Page",
+          }}
         />
         {/* <Stack.Screen
         name="about"
