@@ -83,38 +83,37 @@ export default function RootLayout2() {
 
 // screenOptions={
 //   {
-//     // headerStyle: {
-//     //   backgroundColor: "red",
-//     // },
-//     // headerTintColor: "blue",
-//     // headerRight: (props) => {
-//     //   console.log(props);
-//     //   return (
-//     //     <View>
-//     //       <Text>Show Menu</Text>
-//     //     </View>
-//     //   );
-//     // },
-//     // title: "soe",
-//     // headerTitle: (e) => (
-//     //   <Text>
-//     //     {e.children.includes("/") ? e.children.split("/")[0] : e.children}
-//     //   </Text>
-//     // ),
-//     // headerSearchBarOptions: {
-//     //   onChangeText: (e) => console.log(e.nativeEvent.text),
-//     //   onSearchButtonPress: (e) => console.log("Pressed"),
-//     // },
-//     // contentInsetAdjustmentBehavior: "automatic",
-//     // headerTransparent: false,
-//     // header: (e) => {
-//     //   return (
-//     //     <View>
-//     //       <Text>Header</Text>
-//     //     </View>
-//     //   );
-//     // },
-//     // animation: "slide_from_bottom",
-//     // orientation: "all",
+// headerStyle: {
+//   backgroundColor: "red",
+// },
+// headerTintColor: "blue",
+// headerRight: (props) => {
+//   console.log(props);
+//   return (
+//     <View>
+//       <Text>Show Menu</Text>
+//     </View>
+//   );
+// },
+// title: "soe",
+// headerTitle: (e) => (
+//   <Text>
+//     {e.children.includes("/") ? e.children.split("/")[0] : e.children}
+//   </Text>
+// ),
+// headerSearchBarOptions: {
+//   onChangeText: (e) => console.log(e.nativeEvent.text),
+//   onSearchButtonPress: (e) => console.log("Pressed"),
+// },
+// headerTransparent: false,
+// header: (e) => {
+//   return (
+//     <View>
+//       <Text>Header</Text>
+//     </View>
+//   );
+// },
+// animation: "slide_from_bottom",
+// orientation: "all",
 //   }
 // }

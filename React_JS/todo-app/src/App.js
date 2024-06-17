@@ -1,7 +1,7 @@
-import Transform from "./Sessions/Transform";
+import UseEffect from "./Sessions/UseEffect";
 
 function App() {
-  return <Transform />;
+  return <UseEffect />;
 }
 
 export default App;

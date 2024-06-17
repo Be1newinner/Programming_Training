@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react_native_expo_navigation",
-    "slug": "react_native_expo_navigation",
+    "name": "expo_bottom_tab_navigation2",
+    "slug": "expo_bottom_tab_navigation2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
