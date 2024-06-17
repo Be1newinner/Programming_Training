@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  SectionList,
-  StatusBar,
-} from "react-native";
+import { Text, View, SectionList, StatusBar } from "react-native";
 
 const DATA = [
   {
@@ -55,7 +48,7 @@ const App = () => (
         <Text
           style={{
             fontSize: 32,
-            backgroundColor: "#fff",
+            backgroundColor: "#27c742",
           }}
         >
           {title}
