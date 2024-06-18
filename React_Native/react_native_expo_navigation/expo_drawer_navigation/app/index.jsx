@@ -1,4 +1,5 @@
 import { Link } from "expo-router";
+import { Drawer } from "expo-router/drawer";
 import { Text, View } from "react-native";
 
 export default function App() {
@@ -17,6 +18,14 @@ export default function App() {
       >
         I am Index Screen
       </Text>
+
+      <Drawer.Screen
+        options={{
+          title: "Home",
+          headerShown: true,
+          drawerLabel: "Home Page",
+        }}
+      />
 
       <Link href={"contact"} style={{ color: "blue" }}>
         Contact Us
