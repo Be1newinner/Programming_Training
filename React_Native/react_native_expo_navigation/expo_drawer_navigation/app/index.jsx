@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Drawer } from "expo-router/drawer";
 import { Text, View } from "react-native";
@@ -19,13 +20,14 @@ export default function App() {
         I am Index Screen
       </Text>
 
-      <Drawer.Screen
+      {/* <Drawer.Screen
         options={{
           title: "Home",
           headerShown: true,
           drawerLabel: "Home Page",
+          drawerIcon: () => <Ionicons name="baseball" size={40} />,
         }}
-      />
+      /> */}
 
       <Link href={"contact"} style={{ color: "blue" }}>
         Contact Us
