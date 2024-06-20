@@ -7,10 +7,12 @@ export const CartContextProvider = ({ children }) => {
   const [cartData, setCartData] = useState(0);
 
   return (
-    <CartContextConsumer.Provider value={{
+    <CartContextConsumer.Provider
+      value={{
         cartData,
-        setCartData
-    }}>
+        setCartData,
+      }}
+    >
       {children}
     </CartContextConsumer.Provider>
   );
