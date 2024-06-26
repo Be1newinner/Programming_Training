@@ -1,10 +1,45 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { useReducer } from "react";
+import { Pressable, Text } from "react-native";
 
-export default function C21_UseReducer() {
+function reducer(state, action) {
+  if (action.type === "increaseQuantity") {
+    return {
+      age: state.age + action.payload,
+    };
+  }
+  if (action.type === "decreaseQuantity") {
+    return {
+      age: state.age - 1,
+    };
+  }
+  if (action.type === "removeProduct") {
+    return {
+      age: state.age - 1,
+    };
+  }
+  throw Error("Unknown action.");
+}
+
+export default function S1_useReducer() {
+  const [state, dispatch] = useReducer(reducer, { cart: [] });
+
   return (
-    <View>
-      <Text>UseReducer</Text>
-    </View>
+    <>
+      <Pressable
+        onClick={() => {
+          dispatch({ type: "increase", payload: 5 });
+        }}
+      >
+        <Text>Increase age</Text>
+      </Pressable>
+      <Pressable
+        onClick={() => {
+          dispatch({ type: "decrease" });
+        }}
+      >
+        <Text>Decrease age</Text>
+      </Pressable>
+      <Text>Hello! You are {state.age}.</Text>
+    </>
   );
 }
