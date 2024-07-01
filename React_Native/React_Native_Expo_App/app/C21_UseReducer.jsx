@@ -20,8 +20,8 @@ function reducer(state, action) {
   throw Error("Unknown action.");
 }
 
-export default function S1_useReducer() {
-  const [state, dispatch] = useReducer(reducer, { cart: [] });
+export default function S21_useReducer() {
+  const [state, dispatch] = useReducer(reducer, { age: 0 });
 
   return (
     <>

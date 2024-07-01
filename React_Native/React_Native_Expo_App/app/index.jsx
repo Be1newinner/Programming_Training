@@ -1,4 +1,4 @@
-import { Redirect } from "expo-router";
+// import { Redirect } from "expo-router";
 import { Text, View, ViewBase } from "react-native";
 
 function App() {

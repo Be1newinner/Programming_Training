@@ -1,48 +1,37 @@
 import { useState } from "react";
-import { Button, Image, Text, View } from "react-native";
-
-// let abc = 15;
-// abc++;
-// console.log(abc);
+import { Button, Text, View } from "react-native";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [state, dispatch] = useState(0);
+
+  function reducer(state, type) {
+    if (type == "increase") {
+      return state + 1;
+    }
+    if (type == "decrease") {
+      return state - 1;
+    }
+  }
 
   function increase() {
-    if (count < 10) {
-      setCount(count + 1);
+    if (state < 10) {
+      dispatch(reducer(state, "increase"));
+    }
+  }
+
+  function decrease() {
+    if (state > 0) {
+      dispatch(reducer(state, "decrease"));
     }
   }
 
   return (
     <View>
-      <Button title="Submit" onPress={increase} />
-      <Text> variable vaalue is {count} </Text>
+      <Text> variable vaalue is {state} </Text>
+      <Button title="increase" onPress={increase} />
+      <Button title="decrease" onPress={decrease} />
     </View>
   );
 }
 
-{
-  /* <Image
-  source={{
-    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVtQYjLQyDLEXCmFSEyTnHfYvuC4wXX11vfVECr9-Ehw&s",
-  }}
-  style={{
-    height: 100,
-    width: 100,
-  }}
-/> */
-}
-
-{
-  /* <Text>fsdfasd asdas das d fsa fasdd asd as d</Text> */
-}
-{
-  /* <Button
-        title="Submit"
-        onPress={() => {
-          console.log("hi");
-        }}
-      /> */
-}
 export default App;
