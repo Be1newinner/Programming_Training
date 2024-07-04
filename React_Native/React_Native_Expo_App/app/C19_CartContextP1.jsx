@@ -11,10 +11,7 @@ export default function C19_CartContextP1() {
   // }, [cartData]);
 
   function increaseCounter() {
-    const data = fetch("");
-    const repsonse = data.json();
-
-    setCartData(repsonse.message);
+    setCartData(cartData + 1);
   }
 
   return (

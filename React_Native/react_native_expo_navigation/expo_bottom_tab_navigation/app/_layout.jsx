@@ -1,16 +1,29 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { Dimensions } from "react-native";
 
 export default function _Layout() {
   return (
-    <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          tabBarIcon: () => <Ionicons name="arrow-forward" />,
-        }}
-      />
-    </Tabs>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: "red",
+        // tabBarActiveBackgroundColor: "orange",
+        title: "refsdf",
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="add-circle" color={color} size={size} />
+        ),
+        tabBarStyle: {
+          paddingBottom: 5,
+          height: 55,
+          width: Dimensions.get("screen").width - 20,
+          position: "relative",
+          // bottom: 50,
+          // left: 20,
+          // top: 50,
+          borderRadius: 10,
+        },
+      }}
+    />
   );
 }
 
