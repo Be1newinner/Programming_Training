@@ -15,6 +15,7 @@ const port = process.env.PORT || 3000;
 const swaggerOptions = {
   apis: ["src/**/*.js"],
   swaggerDefinition: require("./public/swagger.json"),
+  explorer: true,
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
@@ -25,6 +26,7 @@ app.use(
   swaggerUi.setup(swaggerDocs, {
     customCssUrl:
       "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css",
+    customCss: ".swagger-ui .topbar { display: none }",
   })
 );
 
