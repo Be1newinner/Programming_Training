@@ -27,15 +27,15 @@ const router = express.Router();
  *       - bearerAuth: []
  *     responses:
  *       200:
- *         description: List of students
+ *         description: List of all students
  *         content:
  *           application/json:
  *             schema:
  *               type: array
  *               items:
  *                 $ref: '#/components/schemas/Student'
- *       401:
- *         description: Unauthorized
+ *       500:
+ *         description: Internal server error
  */
 router.get("/", authenticateToken, getAllStudents);
 
@@ -50,10 +50,10 @@ router.get("/", authenticateToken, getAllStudents);
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
- *         description: Student ID
+ *         required: true
+ *         description: The student ID
  *     responses:
  *       200:
  *         description: Student details
@@ -61,10 +61,8 @@ router.get("/", authenticateToken, getAllStudents);
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Student'
- *       401:
- *         description: Unauthorized
- *       404:
- *         description: Student not found
+ *       500:
+ *         description: Internal server error
  */
 router.get("/:id", authenticateToken, getStudentById);
 
@@ -84,9 +82,9 @@ router.get("/:id", authenticateToken, getStudentById);
  *             $ref: '#/components/schemas/Student'
  *     responses:
  *       201:
- *         description: Student created
- *       401:
- *         description: Unauthorized
+ *         description: Student created successfully
+ *       400:
+ *         description: Bad request
  */
 router.post("/", authenticateToken, createStudent);
 
@@ -101,10 +99,10 @@ router.post("/", authenticateToken, createStudent);
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
- *         description: Student ID
+ *         required: true
+ *         description: The student ID
  *     requestBody:
  *       required: true
  *       content:
@@ -113,11 +111,9 @@ router.post("/", authenticateToken, createStudent);
  *             $ref: '#/components/schemas/Student'
  *     responses:
  *       200:
- *         description: Student updated
- *       401:
- *         description: Unauthorized
- *       404:
- *         description: Student not found
+ *         description: Student updated successfully
+ *       400:
+ *         description: Bad request
  */
 router.put("/:id", authenticateToken, updateStudent);
 
@@ -132,17 +128,15 @@ router.put("/:id", authenticateToken, updateStudent);
  *     parameters:
  *       - in: path
  *         name: id
- *         required: true
  *         schema:
  *           type: string
- *         description: Student ID
+ *         required: true
+ *         description: The student ID
  *     responses:
  *       200:
- *         description: Student deleted
- *       401:
- *         description: Unauthorized
- *       404:
- *         description: Student not found
+ *         description: Student deleted successfully
+ *       500:
+ *         description: Internal server error
  */
 router.delete("/:id", authenticateToken, deleteStudent);
 
