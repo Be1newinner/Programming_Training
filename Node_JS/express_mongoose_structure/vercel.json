@@ -7,7 +7,7 @@
       "dest": "/server.js"
     },
     {
-      "src": "/docs",
+      "src": "/",
       "dest": "/server.js"
     },
     {
