@@ -13,8 +13,27 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const swaggerOptions = {
-  swaggerDefinition: require("./public/swagger.json"),
-  apis: ["./src/routes/*.js"],
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Library API",
+      version: "1.0.0",
+      description: "A simple Express Library API",
+      termsOfService: "http://example.com/terms/",
+      contact: {
+        name: "API Support",
+        url: "http://www.exmaple.com/support",
+        email: "support@example.com",
+      },
+    },
+    servers: [
+      {
+        url: "https://nodejs-swagger-api.vercel.app/",
+        description: "My API Documentation",
+      },
+    ],
+  },
+  apis: ["src/**/*.js"],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
