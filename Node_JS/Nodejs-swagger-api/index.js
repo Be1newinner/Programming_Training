@@ -5,17 +5,15 @@ import dotenv from "dotenv";
 import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 
-import bodyParser from "body-parser";
-
 import postRouter from "./src/Routes/posts.js";
-import helloRouter from "./src/hello.js";
+// import helloRouter from "./src/hello.js";
 
 const CSS_URL =
   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 const app = express();
 
-app.use(bodyParser.json());
+app.use(express.json());
 const PORT = process.env.PORT || 2001;
 dotenv.config();
 
@@ -54,7 +52,7 @@ app.use(
   swaggerUI.setup(specs, { customCssUrl: CSS_URL })
 );
 
-app.use("/", helloRouter);
+// app.use("/", helloRouter);
 app.use("/posts", postRouter);
 
 app.listen(PORT, () => console.log(`Server runs on port ${PORT}`));
