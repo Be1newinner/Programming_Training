@@ -18,15 +18,13 @@ const swaggerOptions = {
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
-app.use(
-  "/swagger-ui.css",
-  express.static(path.join(__dirname, "assets/swagger.css"))
-);
+
 app.use(
   "/docs",
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocs, {
-    customCssUrl: "/swagger-ui.css",
+    customCssUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css",
   })
 );
 
