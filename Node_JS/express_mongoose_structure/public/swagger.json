@@ -3,7 +3,11 @@
   "info": {
     "title": "Students Fake API",
     "version": "1.0.0",
-    "description": "Fake API for managing users and Students. For support contact us at be1newinner@gmail.com"
+    "description": "Fake API for managing users and Students. For support contact us at be1newinner@gmail.com",
+    "contact": {
+      "name": "API Support",
+      "email": "be1newinner@gmail.com"
+    }
   },
   "components": {
     "schemas": {
@@ -72,6 +76,10 @@
     }
   ],
   "servers": [
+    {
+      "url": "http://programming-training.vercel.app/api",
+      "description": "Live server"
+    },
     {
       "url": "http://localhost:3000/api",
       "description": "Local server"
