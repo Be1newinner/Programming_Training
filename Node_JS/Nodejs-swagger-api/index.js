@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import swaggerUI from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
 
-import postRouter from "./src/Routes/posts.js";
+import postRouter from "./src/routes/studentRoutes";
 
 const CSS_URL =
   "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
