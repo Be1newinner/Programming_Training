@@ -3,7 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const path = require("path");
+const cors = require("cors");
 
 const studentRoutes = require("./src/routes/studentRoutes");
 const userRoutes = require("./src/routes/userRoutes");
@@ -30,6 +30,7 @@ app.use(
 
 app.use(express.json());
 app.use(morgan("dev"));
+app.use(cors());
 
 connectDB();
 
