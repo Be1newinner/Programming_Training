@@ -24,6 +24,8 @@ app.use(
   "/docs",
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocs, {
+    customCssUrl:
+      "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui.js",
     customCss: ".swagger-ui .topbar { display: none }",
   })
 );
