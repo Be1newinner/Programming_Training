@@ -5,22 +5,22 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const path = require("path");
 
-const studentRoutes = require("./routes/studentRoutes");
-const userRoutes = require("./routes/userRoutes");
-const { connectDB } = require("./config/db");
+const studentRoutes = require("../routes/studentRoutes");
+const userRoutes = require("../routes/userRoutes");
+const { connectDB } = require("../config/db");
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 const swaggerOptions = {
-  swaggerDefinition: require("./assets/swagger.json"),
-  apis: ["./routes/*.js"],
+  swaggerDefinition: require("../assets/swagger.json"),
+  apis: ["../routes/*.js"],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use(
   "/swagger-ui.css",
-  express.static(path.join(__dirname, "assets/swagger.css"))
+  express.static(path.join(__dirname, "../assets/swagger.css"))
 );
 app.use(
   "/docs",
