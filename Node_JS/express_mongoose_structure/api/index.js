@@ -12,16 +12,22 @@ const { connectDB } = require("../config/db");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Swagger options
 const swaggerOptions = {
   swaggerDefinition: require("../assets/swagger.json"),
   apis: ["../routes/*.js"],
 };
 
+// Generate Swagger documentation
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
+
+// Serve static files for custom Swagger UI styling
 app.use(
   "/swagger-ui.css",
   express.static(path.join(__dirname, "../assets/swagger.css"))
 );
+
+// Swagger UI setup
 app.use(
   "/docs",
   swaggerUi.serve,
@@ -30,14 +36,20 @@ app.use(
   })
 );
 
+// Middleware setup
 app.use(express.json());
 app.use(morgan("dev"));
 
+// Connect to database
 connectDB();
 
+// API routes
 app.use("/api/students", studentRoutes);
 app.use("/api/users", userRoutes);
 
+// Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = app;
