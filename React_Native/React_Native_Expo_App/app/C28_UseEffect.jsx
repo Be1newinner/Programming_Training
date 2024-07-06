@@ -9,18 +9,7 @@ export default function C28_UseEffect() {
   }, [counter]);
 
   function alerta() {
-    Alert.alert("Delete!", "do you want to delete?", [
-      {
-        text: "cancel",
-        onPress: () => {
-          console.log("cancel");
-        },
-      },
-      {
-        text: "delete",
-        onPress: () => alerta(),
-      },
-    ]);
+    Alert.prompt("Age!", "Please Enter Age")
   }
 
   return (
