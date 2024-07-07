@@ -9,7 +9,7 @@ export default function C28_UseEffect() {
   }, [counter]);
 
   function alerta() {
-    Alert.prompt("Age!", "Please Enter Age")
+    Alert.prompt("Age!", "Please Enter Age");
   }
 
   return (
