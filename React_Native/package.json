@@ -1,18 +1,23 @@
 {
-  "name": "practise-session",
-  "main": "expo-router/entry",
+  "name": "my-monorepo",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "start": "npx expo start --port 2291",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "test": "jest --watchAll",
-    "lint": "expo lint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "jest": {
-    "preset": "jest-expo"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "React_Native_Expo_App/*",
+    "react_native_expo_navigation/expo_bottom_tab_navigation/*",
+    "react_native_expo_navigation/expo_drawer_navigation/*",
+    "react_native_expo_navigation/expo_navigations_options/*",
+    "react_native_expo_navigation/expo_stack_navigation/*",
+    "react_native_expo_navigation/expo-nested-navigations/*"
+  ],
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
     "@react-native-async-storage/async-storage": "1.23.1",
@@ -51,6 +56,5 @@
     "jest-expo": "~51.0.1",
     "react-test-renderer": "18.2.0",
     "typescript": "~5.3.3"
-  },
-  "private": true
+  }
 }

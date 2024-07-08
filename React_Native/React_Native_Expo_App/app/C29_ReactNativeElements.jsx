@@ -359,3 +359,12 @@ const styles = StyleSheet.create({
 });
 
 export default withTheme(Buttons, "");
+
+
+
+// Installation
+// npm install @rneui/themed @rneui/base
+// npm install react-native-vector-icons
+// npm install react-native-safe-area-context
+
+

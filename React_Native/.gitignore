@@ -1,4 +1,3 @@
-./React_Sessions
-React_Sessions
-daisy_ui
-./daisy_ui
+node_modules
+.dist
+.vscode
