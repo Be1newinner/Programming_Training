@@ -1,6 +1,6 @@
 // import { Redirect } from "expo-router";
 import { Text, View, ViewBase } from "react-native";
-import C29_ReactNativeElements from "./C29_ReactNativeElements";
+import C31_DateTimePicker from "./C31_DateTimePicker";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <Text>by Vijay Sir</Text>
       <Text>for support contact me at be1newinner@gmail.com</Text> */}
 
-      <C29_ReactNativeElements />
+      <C31_DateTimePicker />
     </View>
   );
 }
