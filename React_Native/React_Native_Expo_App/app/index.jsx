@@ -1,7 +1,7 @@
-import C32_ViewPager from "./C32_ViewPager";
+import C33_ImageBackground from "./C33_ImageBackground";
 
 function App() {
-  return <C32_ViewPager />;
+  return <C33_ImageBackground />;
 }
 
 export default App;
