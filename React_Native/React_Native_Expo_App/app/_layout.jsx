@@ -9,7 +9,12 @@ export default function Layout() {
     <SafeAreaProvider>
       <Provider store={store}>
         <CartContextProvider>
-          <Drawer screenOptions={{}} />
+          <Drawer>
+            <Drawer.Screen name="C1_UseState" />
+            <Drawer.Screen name="C2_CounterApp" />
+            <Drawer.Screen name="C3_Buttons" />
+            <Drawer.Screen name="C4_Destructuing" />
+          </Drawer>
         </CartContextProvider>
       </Provider>
     </SafeAreaProvider>
