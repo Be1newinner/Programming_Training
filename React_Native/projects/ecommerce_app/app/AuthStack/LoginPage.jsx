@@ -7,29 +7,62 @@ import {
   Pressable,
   Dimensions,
 } from "react-native";
-import { UserContext } from "@/service/UserService/UserContext";
 import { Link } from "expo-router";
 
 const LoginPage = () => {
   // const { login } = useContext(UserContext);
-  const [email, setEmail] = useState("");
+  const [UserName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({
+    username: "",
+    password: "",
+    other: "",
+  });
+
+  const validations = () => {
+    const tempErrors = {
+      username: "",
+      password: "",
+      other: "",
+    };
+
+    let isCorrect = true;
+
+    if (!UserName) {
+      tempErrors.username = "UserName is empty!";
+      isCorrect = false;
+    }
+
+    if (UserName.length < 3) {
+      tempErrors.username = "UserName is invalid!";
+      isCorrect = false;
+    }
+
+    if (!password) {
+      tempErrors.password = "Password is empty!";
+      isCorrect = false;
+    }
+
+    setError(tempErrors);
+
+    return isCorrect;
+  };
 
   const handleLogin = async () => {
+    if (!validations()) {
+      return;
+    }
+
     try {
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      const raw = JSON.stringify({
-        password: "Vijay123",
-        username: "abc",
-      });
-
       const requestOptions = {
         method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password: password,
+          username: UserName,
+        }),
       };
 
       const response = await fetch(
@@ -48,20 +81,23 @@ const LoginPage = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
       <TextInput
-        style={styles.input}
-        placeholder="email ID"
+        style={[styles.input, { borderColor: error.username ? "red" : "#ccc" }]}
+        placeholder="UserName ID"
         placeholderTextColor="#999"
-        value={email}
-        onChangeText={setEmail}
+        value={UserName}
+        onChangeText={setUserName}
       />
+      {error.username ? <Text>{error.username}</Text> : null}
       <TextInput
-        style={styles.input}
+        style={[styles.input, { borderColor: error.password ? "red" : "#ccc" }]}
         placeholder="Password"
         placeholderTextColor="#999"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
       />
+      {error.password ? <Text>{error.password}</Text> : null}
+
       <Pressable
         style={({ pressed }) => [
           styles.button,
