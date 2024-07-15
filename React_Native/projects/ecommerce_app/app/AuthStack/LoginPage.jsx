@@ -11,13 +11,34 @@ import { UserContext } from "@/service/UserService/UserContext";
 import { Link } from "expo-router";
 
 const LoginPage = () => {
-  const { login } = useContext(UserContext);
+  // const { login } = useContext(UserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = async () => {
     try {
-      await login(email, password);
+      const myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      const raw = JSON.stringify({
+        password: "Vijay123",
+        username: "abc",
+      });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow",
+      };
+
+      const response = await fetch(
+        "https://fake-api1.vercel.app/api/users/login",
+        requestOptions
+      );
+      const data = await response.text();
+
+      console.log(data);
     } catch (error) {
       console.error(error.message);
     }
