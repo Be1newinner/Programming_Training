@@ -58,6 +58,16 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LoginRequest"
+              },
+              "examples": {
+                "curl": {
+                  "summary": "cURL example",
+                  "value": "curl -X POST http://localhost:3000/users/login \\  -H 'Content-Type: application/json' \\  -d '{\"username\":\"john_doe\", \"password\":\"password123\"}'"
+                },
+                "fetch": {
+                  "summary": "Fetch API example",
+                  "value": "fetch('http://localhost:3000/users/login', {\n  method: 'POST',\n  headers: {\n    'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    username: 'john_doe',\n    password: 'password123'\n  })\n})\n.then(response => response.json())\n.then(data => console.log(data))\n.catch(error => console.error('Error:', error));"
+                }
               }
             }
           }

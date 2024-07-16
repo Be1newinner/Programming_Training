@@ -1,16 +1,3 @@
-.app_title {
-
-}
-
-.app_body {
-  padding: 0;
-  text-align: center;
-}
-
-body {
-    background-color: blanchedalmond;
-}
-
-.todo-app{
-  background-color: white;
+.heading {
+  background-color: red;
 }
