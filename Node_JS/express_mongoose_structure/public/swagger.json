@@ -3,7 +3,7 @@
   "info": {
     "title": "Students Fake API",
     "version": "1.0.0",
-    "description": "Fake API for managing users and Students. For support contact us at be1newinner@gmail.com",
+    "description": "Fake API for managing users and students. For support contact us at be1newinner@gmail.com",
     "contact": {
       "name": "API Support",
       "email": "be1newinner@gmail.com"
@@ -19,17 +19,31 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/RegisterUserRequest"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "User registered successfully"
+            "description": "User registered successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterUserResponse"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad request"
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -43,20 +57,89 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Login"
+                "$ref": "#/components/schemas/LoginRequest"
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "User logged in successfully"
+            "description": "User logged in successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
           },
           "401": {
-            "description": "Invalid credentials"
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/verify": {
+      "post": {
+        "summary": "Verify a user's token",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User verified successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or expired verification token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -85,7 +168,14 @@
             }
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       },
@@ -109,10 +199,24 @@
         },
         "responses": {
           "201": {
-            "description": "Student created successfully"
+            "description": "Student created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentResponse"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad request"
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -149,7 +253,14 @@
             }
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       },
@@ -184,10 +295,24 @@
         },
         "responses": {
           "200": {
-            "description": "Student updated successfully"
+            "description": "Student updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StudentResponse"
+                }
+              }
+            }
           },
           "400": {
-            "description": "Bad request"
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       },
@@ -215,7 +340,14 @@
             "description": "Student deleted successfully"
           },
           "500": {
-            "description": "Internal server error"
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -225,51 +357,190 @@
     "schemas": {
       "User": {
         "type": "object",
-        "required": ["username", "password"],
         "properties": {
           "username": {
             "type": "string",
-            "description": "Username"
+            "description": "Username",
+            "example": "john_doe"
           },
           "password": {
             "type": "string",
-            "description": "Password"
+            "description": "Password",
+            "example": "password123"
           },
           "email": {
             "type": "string",
-            "description": "User email"
+            "description": "User email",
+            "example": "john.doe@example.com"
+          },
+          "fullname": {
+            "type": "string",
+            "description": "Full name",
+            "example": "John Doe"
+          },
+          "phone": {
+            "type": "integer",
+            "description": "Phone number",
+            "example": 1234567890
+          },
+          "token": {
+            "type": "string",
+            "description": "JWT token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
           }
-        }
+        },
+        "required": ["username", "password", "email"]
       },
-      "Login": {
+      "RegisterUserRequest": {
         "type": "object",
-        "required": ["username", "password"],
         "properties": {
           "username": {
             "type": "string",
-            "description": "Username"
+            "description": "Username",
+            "example": "john_doe"
           },
           "password": {
             "type": "string",
-            "description": "Password"
+            "description": "Password",
+            "example": "password123"
+          },
+          "email": {
+            "type": "string",
+            "description": "User email",
+            "example": "john.doe@example.com"
+          }
+        },
+        "required": ["username", "password", "email"]
+      },
+      "RegisterUserResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": ""
+          },
+          "token": {
+            "type": "string",
+            "description": "JWT token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Username",
+            "example": "john_doe"
+          },
+          "password": {
+            "type": "string",
+            "description": "Password",
+            "example": "password123"
+          }
+        },
+        "required": ["username", "password"]
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": ""
+          },
+          "token": {
+            "type": "string",
+            "description": "JWT token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          }
+        }
+      },
+      "VerifyRequest": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "Verification token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+          }
+        },
+        "required": ["token"]
+      },
+      "VerifyResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": ""
+          },
+          "message": {
+            "type": "string",
+            "description": "Verification message",
+            "example": "Token verified successfully"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": "Invalid credentials"
+          },
+          "token": {
+            "type": "string",
+            "description": "JWT token",
+            "example": ""
+          },
+          "user": {
+            "type": "string",
+            "description": "User data",
+            "example": ""
           }
         }
       },
       "Student": {
         "type": "object",
-        "required": ["name", "age", "grade"],
         "properties": {
           "name": {
             "type": "string",
-            "description": "Name of the student"
+            "description": "Name of the student",
+            "example": "Jane Doe"
           },
           "age": {
             "type": "integer",
-            "description": "Age of the student"
+            "description": "Age of the student",
+            "example": 21
           },
           "grade": {
             "type": "string",
-            "description": "Grade of the student"
+            "description": "Grade of the student",
+            "example": "A"
+          }
+        },
+        "required": ["name", "age", "grade"]
+      },
+      "StudentResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message",
+            "example": ""
+          },
+          "student": {
+            "$ref": "#/components/schemas/Student"
           }
         }
       }
@@ -289,7 +560,7 @@
   ],
   "servers": [
     {
-      "url": "http://programming-training.vercel.app/api",
+      "url": "https://fake-api1.vercel.app/api",
       "description": "Live server"
     },
     {
