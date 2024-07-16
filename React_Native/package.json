@@ -4,8 +4,12 @@
   "main": "index.js",
   "scripts": {
     "ecommerce": "cd ./projects/ecommerce_app/ && npx expo start",
-    "navigations": "cd ./projects/expo_navigation/ && npx expo start",
-    "trainings": "cd ./projects/training_sessions/ && npx expo start"
+    "training": "cd ./projects/training_sessions/ && npx expo start",
+    "tabs": "cd ./projects/expo_bottom_tab_navigation/ && npx expo start",
+    "drawer": "cd ./projects/expo_drawer_navigation/ && npx expo start",
+    "navigation_options": "cd ./projects/expo_navigations_options/ && npx expo start",
+    "stack": "cd ./projects/expo_stack_navigation/ && npx expo start",
+    "navigation_nested": "cd ./projects/expo_stack_navigation/ && npx expo start"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +19,11 @@
   "workspaces": [
     "projects/ecommerce_app/*",
     "projects/training_sessions/*",
-    "projects/expo_navigation/expo_bottom_tab_navigation/*",
-    "projects/expo_navigation/expo_drawer_navigation/*",
-    "projects/expo_navigation/expo_navigations_options/*",
-    "projects/expo_navigation/expo_stack_navigation/*",
-    "projects/expo_navigation/expo-nested-navigations/*"
+    "projects/expo_bottom_tab_navigation/*",
+    "projects/expo_drawer_navigation/*",
+    "projects/expo_navigations_options/*",
+    "projects/expo_stack_navigation/*",
+    "projects/expo-nested-navigations/*"
   ],
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
