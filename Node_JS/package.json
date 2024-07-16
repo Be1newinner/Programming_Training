@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "cd ./packages/express_mongoose_structure && npm start",
+    "graphql": "cd ./packages/graphql && npm start",
+    "mongo": "cd ./packages/mongo_db_all_commands && npm start",
+    "multi-thread": "cd ./packages/multi-threading && npm start"
   },
   "private": "true",
   "dependencies": {
@@ -21,7 +24,10 @@
     "nodemon": "^3.1.4"
   },
   "workspaces": [
-    "packages/"
+    "packages/express_mongoose_structure",
+    "packages/graphql-api",
+    "packages/mongo_db_all_commands",
+    "packages/multi-threading"
   ],
   "license": "LGPL-2.1-or-later"
 }
