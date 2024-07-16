@@ -26,9 +26,19 @@ const registerUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
+
+  // Ensure that either username or email is provided
+  if (!username && !email) {
+    return res
+      .status(400)
+      .json({ error: "Username or email is required", token: "", user: "" });
+  }
+
   try {
-    const user = await User.findOne({ username });
+    const query = username ? { username } : { email };
+    const user = await User.findOne(query, "-token -__v");
+
     if (user && (await bcrypt.compare(password, user.password))) {
       const token = jwt.sign(
         { username: user.username },
