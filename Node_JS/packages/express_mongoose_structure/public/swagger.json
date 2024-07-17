@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Students Fake API",
+    "title": "Ecommerce Fake API",
     "version": "1.0.0",
-    "description": "Fake API for managing users and students. For support contact us at be1newinner@gmail.com",
+    "description": "Fake API for managing users and Products. For support contact us at be1newinner@gmail.com",
     "contact": {
       "name": "API Support",
       "email": "be1newinner@gmail.com"
@@ -154,24 +154,41 @@
         }
       }
     },
-    "/students": {
+    "/products": {
       "get": {
-        "summary": "Get all students",
-        "tags": ["Students"],
-        "security": [
+        "summary": "Get all products",
+        "tags": ["Products"],
+        "parameters": [
           {
-            "bearerAuth": []
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "example": 1
+            },
+            "description": "Page number for pagination"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "example": 10
+            },
+            "description": "Number of products per page"
           }
         ],
         "responses": {
           "200": {
-            "description": "List of all students",
+            "description": "List of products",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Student"
+                    "$ref": "#/components/schemas/Product"
                   }
                 }
               }
@@ -188,82 +205,36 @@
             }
           }
         }
-      },
-      "post": {
-        "summary": "Create a new student",
-        "tags": ["Students"],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Student"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Student created successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StudentResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/students/{id}": {
+    "/products/{sku}": {
       "get": {
-        "summary": "Get a student by ID",
-        "tags": ["Students"],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
+        "summary": "Get a product by SKU",
+        "tags": ["Products"],
         "parameters": [
           {
+            "name": "sku",
             "in": "path",
-            "name": "id",
+            "required": true,
             "schema": {
               "type": "string"
             },
-            "required": true,
-            "description": "The student ID"
+            "description": "SKU of the product to retrieve"
           }
         ],
         "responses": {
           "200": {
-            "description": "Student details",
+            "description": "Product details",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Student"
+                  "$ref": "#/components/schemas/Product"
                 }
               }
             }
           },
-          "500": {
-            "description": "Internal server error",
+          "404": {
+            "description": "Product not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -271,83 +242,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a student by ID",
-        "tags": ["Students"],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "description": "The student ID"
-          }
-        ],
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Student"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Student updated successfully",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/StudentResponse"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a student by ID",
-        "tags": ["Students"],
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "description": "The student ID"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Student deleted successfully"
           },
           "500": {
             "description": "Internal server error",
@@ -520,39 +414,42 @@
           }
         }
       },
-      "Student": {
+      "Product": {
         "type": "object",
         "properties": {
+          "sku": {
+            "type": "string",
+            "description": "Stock Keeping Unit",
+            "example": "ABC123"
+          },
           "name": {
             "type": "string",
-            "description": "Name of the student",
-            "example": "Jane Doe"
+            "description": "Product name",
+            "example": "Wireless Mouse"
           },
-          "age": {
-            "type": "integer",
-            "description": "Age of the student",
-            "example": 21
-          },
-          "grade": {
+          "description": {
             "type": "string",
-            "description": "Grade of the student",
-            "example": "A"
+            "description": "Product description",
+            "example": "A high-quality wireless mouse"
+          },
+          "price": {
+            "type": "number",
+            "format": "float",
+            "description": "Product price",
+            "example": 29.99
+          },
+          "stock": {
+            "type": "integer",
+            "description": "Stock quantity",
+            "example": 100
+          },
+          "category": {
+            "type": "string",
+            "description": "Product category",
+            "example": "Electronics"
           }
         },
-        "required": ["name", "age", "grade"]
-      },
-      "StudentResponse": {
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "string",
-            "description": "Error message",
-            "example": ""
-          },
-          "student": {
-            "$ref": "#/components/schemas/Student"
-          }
-        }
+        "required": ["sku", "name", "price", "stock"]
       }
     },
     "securitySchemes": {

@@ -5,8 +5,9 @@ const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const cors = require("cors");
 
-const studentRoutes = require("./src/routes/studentRoutes");
 const userRoutes = require("./src/routes/userRoutes");
+const productRoutes = require("./src/routes/productRoutes");
+
 const { connectDB } = require("./src/config/db");
 
 const app = express();
@@ -36,8 +37,8 @@ app.use(cors());
 
 connectDB();
 
-app.use("/api/students", studentRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

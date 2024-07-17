@@ -49,29 +49,16 @@ const LoginPage = () => {
   };
 
   const handleLogin = async () => {
-    if (!validations()) {
-      return;
-    }
+    // if (!validations()) {
+    //   return;
+    // }
 
     try {
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          password: password,
-          username: UserName,
-        }),
-      };
-
       const response = await fetch(
-        "https://fake-api1.vercel.app/api/users/login",
-        requestOptions
+        "http://10.10.10.41:9001/api/Employee/GetEmployee?id=1242783"
       );
-      const data = await response.text();
-
-      console.log(data);
+      const data = await response.json();
+      console.log("DATA => ", data);
     } catch (error) {
       console.error(error.message);
     }
