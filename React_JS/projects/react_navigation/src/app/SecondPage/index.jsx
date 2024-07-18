@@ -27,7 +27,7 @@ export default function SeondPage() {
 
       <a href="/"> Home Page with a </a>
       <br />
-      <Link to="/"> Home Page with Link </Link>
+      <Link to="/" param> Home Page with Link </Link>
 
       <button onClick={() => navigate("/")}>go to </button>
       <button onClick={() => navigate("/", { replace: true })}>
