@@ -45,6 +45,7 @@ export default function Layout() {
             <Drawer.Screen name="C33_ImageBackground" />
             <Drawer.Screen name="C34_LinearGradient" />
             <Drawer.Screen name="C35_CheckBox" />
+            <Drawer.Screen name="C35_ParentChildProps" />
           </Drawer>
         </CartContextProvider>
       </Provider>

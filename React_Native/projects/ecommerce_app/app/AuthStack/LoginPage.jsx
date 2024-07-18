@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -49,14 +49,27 @@ const LoginPage = () => {
   };
 
   const handleLogin = async () => {
-    // if (!validations()) {
-    //   return;
-    // }
+    if (!validations()) {
+      return;
+    }
 
     try {
       const response = await fetch(
-        "http://10.10.10.41:9001/api/Employee/GetEmployee?id=1242783"
+        "https://fake-api1.vercel.app/api/users/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: UserName,
+            password: password,
+          }),
+        }
       );
+
+      // GET REQUEST
+      // const response = await fetch("URL_OF_API");
       const data = await response.json();
       console.log("DATA => ", data);
     } catch (error) {
