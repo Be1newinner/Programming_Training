@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<style>
+
+* {
+margin: 0px;
+padding: 0px;
+}
+
+.parent{
+background-color:red;
+height: 500px;
+width: 550px;
+display: flex;
+flex-wrap: wrap;
+justify-content: left ; /* left | right | center | space-between | space-around */
+/* align-items:flex-start; flex-start | flex-end | center */
+align-content: space-around;
+flex-direction: row-reverse; /* row | row-reverse | column | column-reverse */
+}
+
+.child{
+background-color:blue;
+height: 130px;
+width: 130px;
+}
+
+.child:nth-child(even) {
+background-color:green;
+}
+
+.child1 {
+background-color: orange;
+}
+
+.child2 {
+background-color: pink !important;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="parent">
+
+<div class="child" style="flex-basis: 100%;">
+1
+</div>
+
+
+<div class="child" style="flex-basis: 50%;">
+2
+</div>
+
+
+<div class="child" style="flex-basis: 50%;">
+7
+</div>
+
+<div class="child" style="flex-basis: 50%;">
+8
+</div>
+
+<div class="child child1"  style="flex-basis: 25%;">
+9
+</div>
+
+<div class="child child2"  style="flex-basis: 25%;">
+10
+</div>
+
+
+
+</div>
+
+
+</body>
+
+</html>

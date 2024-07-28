@@ -1,0 +1,26 @@
+ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  font: 20px;
+  list-style-type: none;
+  padding: 10px;
+  gap: 10px;
+}
+
+li {
+  height: 50px;
+  width: 25vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

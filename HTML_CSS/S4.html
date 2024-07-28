@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<title>
+ Sesssion 4
+</title>
+
+<style>
+
+.parent {
+width: 100px;
+height: 100px;
+background-color:red;
+padding:10px;
+/* margin:50px; value in pixels | percent | auto */
+/* border-radius:100px; */
+border-top-left-radius: 50px;
+border-bottom-right-radius: 50px;
+overflow: hidden; /* hidden | scroll | visible */
+box-shadow: 10px 0px 5px 5px gray; /* x-axis y-axis blur spread color */ 
+
+/* 
+TO CENTER AN ITEM HORIZONTALLY
+ 
+margin-left: auto;
+margin-right: auto;
+*/
+
+position: relative; /* static | relative | absolute */
+/*
+top: 200px;
+left: 200px;
+bottom: 20px;
+right: 20px;
+*/
+
+}
+
+.parent2 {
+width: 100px;
+height: 100px;
+background-color:red;
+position: absolute;
+bottom: 50%;
+right: 50%;
+}
+
+.child {
+width: 100px;
+height:100px;
+background-color:blue;
+/* border: width type color;  type => solid | dotted | dashed */
+
+/* border: 10px dashed black; 
+border-width: 5px;
+border-color: orange;
+border-style: solid; */
+
+border-left: 5px solid black;
+border-right: 5px solid orange;
+
+background-image: url('https://plus.unsplash.com/premium_photo-1673795754005-214e3e1fccba?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+
+}
+
+body {
+	background-color: black;
+	background-image: url('https://images.rawpixel.com/image_social_landscape/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjE5My1zYXNpLTc0LXBhdHRlcm5fMi5qcGc.jpg');
+	
+	background-repeat: repeat;
+	background-size: 5px /* contain cover size in pixel */
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="parent">
+
+<div class="child"></div>
+
+</div>
+
+<div class="parent2"></div>
+
+</body>
+</html>
