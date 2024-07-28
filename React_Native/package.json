@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "ecommerce": "cd ./projects/ecommerce_app/ && npx expo start",
+    "ecommerce": "cd ./projects/ecommerce_app/ && npx expo start --port 22910",
     "training": "cd ./projects/training_sessions/ && npx expo start",
     "tabs": "cd ./projects/expo_bottom_tab_navigation/ && npx expo start",
     "drawer": "cd ./projects/expo_drawer_navigation/ && npx expo start",
