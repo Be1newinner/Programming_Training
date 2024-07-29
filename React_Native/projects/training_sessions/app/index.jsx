@@ -1,7 +1,7 @@
-import C33_ImageBackground from "./C33_ImageBackground";
+import C36_UseMemo from "./C36_UseMemo";
 
 function App() {
-  return <C33_ImageBackground />;
+  return <C36_UseMemo />;
 }
 
 export default App;
