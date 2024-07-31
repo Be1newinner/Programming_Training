@@ -1,7 +1,7 @@
-import C36_UseMemo from "./C36_UseMemo";
+import C38_SuspenseFallback from "./C38_SuspenseFallback";
 
 function App() {
-  return <C36_UseMemo />;
+  return <C38_SuspenseFallback />;
 }
 
 export default App;
