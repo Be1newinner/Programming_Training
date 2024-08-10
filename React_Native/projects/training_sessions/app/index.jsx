@@ -1,7 +1,7 @@
-import C38_SuspenseFallback from "./C38_SuspenseFallback";
+import C23_Redux from "./C23_Redux";
 
 function App() {
-  return <C38_SuspenseFallback />;
+  return <C23_Redux />;
 }
 
 export default App;

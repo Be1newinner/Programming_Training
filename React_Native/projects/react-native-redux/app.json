@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "hello",
-    "slug": "hello",
+    "name": "react-native-redux",
+    "slug": "react-native-redux",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ff1"
+      "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
@@ -18,10 +18,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ff1",
-        "package": "sd"
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.shipsar.rntraining"
+      "package": "com.be1newinner.reactnativeredux"
     },
     "web": {
       "bundler": "metro",
@@ -39,7 +38,7 @@
         "origin": false
       },
       "eas": {
-        "projectId": "d2ebc62c-80e1-455b-8b11-7f60018d183a"
+        "projectId": "0be5e405-63ea-4bf7-9bbc-c0fab61ab414"
       }
     }
   }
