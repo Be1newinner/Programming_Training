@@ -1,6 +1,11 @@
+// CRUD Operations on Array
+
+// CREATE ARRAY ----------------------------------------------------------------
+// What is an array?
+
 const names = ["Vijay", "ajay", "sanjay"];
 const ages = [5, 10, 15, 16, 19];
-const isStudent = [true, false, true, false, true];
+const isStudentArray = [true, false, true, false, true];
 const objectarray = [
   { name: "Vijay", age: 5, isStudent: true },
   { name: "ajay", age: 10, isStudent: false },
@@ -9,19 +14,17 @@ const objectarray = [
   { name: "Raj", age: 19, isStudent: true },
 ];
 
-// CRUD Operations on Array
-
-// Read Items of Array
+// Read Items of Array ------------------------------------------------------
 // console.log(names[0]);
 // console.log(names[1]);
 // console.log(names[2]);
 
-// Update items of array
+// Update items of array ------------------------------------------------------
 // names[0] = "Vijay Kumar";
 // names[1] = "Ajay Kumar";
 // names[2] = "Sanjay Kumar";
 
-// Delete items of array
+// Delete items of array ---------------------------------------------------
 // names[0] = undefined;
 // names[1] = undefined;
 // names[2] = undefined;
@@ -33,7 +36,7 @@ const objectarray = [
 
 // console.log(names);
 
-// Add items to array
+// Add items to array --------------------------------------------------
 // names.push("Rahul Kumar");
 // names.push("Rahul Kumar 2");
 // names[6] = "dasdasdas";
