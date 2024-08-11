@@ -15,23 +15,23 @@ export const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREASE_COUNTER: {
       console.log("INCREASE CALLED");
-      return null;
+      return state;
     }
     case INCREASE_COUNTER_BY_X: {
       console.log("INCREASE CALLED by X");
-      return null;
+      return state;
     }
     case DECREASE_COUNTER: {
       console.log("DECREASE CALLED");
-      return null;
+      return state;
     }
     case RESET_COUNTER: {
       console.log("RESET CALLED");
-      return null;
+      return state;
     }
     default: {
       console.log("INVALID REDUCER ACTION!");
-      return null;
+      return state;
     }
   }
 };
