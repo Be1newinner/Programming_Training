@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Vijay Kuamr at Asha Learnology</h1>
+      <h1>Asha Learnology</h1>
       <AppointmentForm addAppointment={addAppointment} />
       <AppointmentList
         appointments={appointments}
