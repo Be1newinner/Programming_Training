@@ -6,9 +6,9 @@ import {
 } from "../actions/counterAActions";
 import { fetchCounterAFromApi } from "@/apis/fakeApi";
 
-function* fetchCounterA() {
+function* fetchCounterA(arg, arg2) {
   try {
-    const response = yield call(fetchCounterAFromApi);
+    const response = yield call(fetchCounterAFromApi, arg, arg2);
     yield put(fetchCounterASuccess(response.value));
   } catch (error) {
     yield put(fetchCounterAFailure(error.message));

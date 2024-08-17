@@ -1,4 +1,4 @@
-export const fetchCounterAFromApi = async () => {
+export const fetchCounterAFromApi = async (arg, arg2) => {
   // Simulate an API call
   console.log("API A is called!");
   return { value: 10 };
