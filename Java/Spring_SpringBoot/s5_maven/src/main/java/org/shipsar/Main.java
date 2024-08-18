@@ -9,20 +9,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
 
-        Vehicle vehicle = new Vehicle();
-        vehicle.setName("Honda City");
-        System.out.println("THe Vehivle name is " + vehicle.getName());
-
-
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
         Vehicle veh = context.getBean(Vehicle.class);
+        veh.setName("AUDI R8");
         System.out.println("Vehicle name from spring context is : " + veh.getName());
 
-        var helloBro = context.getBean(String.class);
-        System.out.println("Vehicle name from spring context is : " + helloBro);
-
-        var numberBro = context.getBean(Integer.class);
-        System.out.println("Vehicle name from spring context is : " + numberBro);
     }
 }

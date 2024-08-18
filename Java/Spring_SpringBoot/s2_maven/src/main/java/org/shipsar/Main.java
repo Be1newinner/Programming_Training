@@ -16,13 +16,13 @@ public class Main {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        Vehicle veh = context.getBean(Vehicle.class);
+        Vehicle veh = context.getBean("vehicle1",Vehicle.class);
         System.out.println("Vehicle name from spring context is : " + veh.getName());
 
-        var helloBro = context.getBean(String.class);
-        System.out.println("Vehicle name from spring context is : " + helloBro);
+        Vehicle veh2 = context.getBean("vehicle2",Vehicle.class);
+        System.out.println("Vehicle name from spring context is : " + veh2.getName());
 
-        var numberBro = context.getBean(Integer.class);
-        System.out.println("Vehicle name from spring context is : " + numberBro);
+        Vehicle veh3 = context.getBean("vehicle3",Vehicle.class);
+        System.out.println("Vehicle name from spring context is : " + veh3.getName());
     }
 }

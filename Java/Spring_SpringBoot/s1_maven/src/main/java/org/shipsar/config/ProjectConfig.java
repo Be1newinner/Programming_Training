@@ -14,4 +14,14 @@ public class ProjectConfig {
         veh.setName("AUDI R8");
         return veh;
     }
+
+    @Bean
+    String helloBro() {
+        return "BEAN SAY HELLO!";
+    }
+
+    @Bean
+    Integer numberBro() {
+        return 152;
+    }
 }
