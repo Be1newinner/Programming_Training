@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../redux/actions/userActions";
+import { useNavigate } from "react-router-dom";
 
-const RegisterScreen = ({ history }) => {
+const RegisterScreen = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,15 +11,16 @@ const RegisterScreen = ({ history }) => {
   const [message, setMessage] = useState(null);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error, userInfo } = userRegister;
 
   useEffect(() => {
     if (userInfo) {
-      history.push("/");
+      navigate("/");
     }
-  }, [history, userInfo]);
+  }, [userInfo, navigate]);
 
   const submitHandler = (e) => {
     e.preventDefault();

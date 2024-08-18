@@ -15,6 +15,8 @@ import {
   USER_UPDATE_PROFILE_FAIL,
 } from "../actions/userActions";
 
+const baseURL = process.env.REACT_APP_BASEURL;
+
 function* loginUser({ payload }) {
   try {
     const config = {
@@ -25,7 +27,7 @@ function* loginUser({ payload }) {
 
     const { data } = yield call(
       axios.post,
-      "/api/users/login",
+      `${baseURL ? baseURL : ""}/api/users/login`,
       { email: payload.email, password: payload.password },
       config
     );
@@ -53,7 +55,7 @@ function* registerUser({ payload }) {
 
     const { data } = yield call(
       axios.post,
-      "/api/users/register",
+      `${baseURL ? baseURL : ""}/api/users/register`,
       { name: payload.name, email: payload.email, password: payload.password },
       config
     );
@@ -83,7 +85,11 @@ function* getUserDetails() {
       },
     };
 
-    const { data } = yield call(axios.get, "/api/users/profile", config);
+    const { data } = yield call(
+      axios.get,
+      `${baseURL ? baseURL : ""}/api/users/profile`,
+      config
+    );
 
     yield put({ type: USER_DETAILS_SUCCESS, payload: data });
   } catch (error) {
@@ -110,7 +116,7 @@ function* updateUserProfile({ payload }) {
 
     const { data } = yield call(
       axios.put,
-      "/api/users/profile",
+      `${baseURL ? baseURL : ""}/api/users/profile`,
       payload,
       config
     );

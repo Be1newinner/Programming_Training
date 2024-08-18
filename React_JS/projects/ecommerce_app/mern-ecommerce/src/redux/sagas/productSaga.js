@@ -8,10 +8,14 @@ import {
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
 } from "../actions/productActions";
+const baseURL = process.env.REACT_APP_BASEURL;
 
 function* fetchProducts() {
   try {
-    const { data } = yield call(axios.get, "/api/products");
+    const { data } = yield call(
+      axios.get,
+      `${baseURL ? baseURL : ""}/api/products`
+    );
     yield put({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
     yield put({
@@ -26,7 +30,10 @@ function* fetchProducts() {
 
 function* fetchProductDetails({ payload }) {
   try {
-    const { data } = yield call(axios.get, `/api/products/${payload}`);
+    const { data } = yield call(
+      axios.get,
+      `${baseURL ? baseURL : ""}/api/products/${payload}`
+    );
     yield put({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
   } catch (error) {
     yield put({
