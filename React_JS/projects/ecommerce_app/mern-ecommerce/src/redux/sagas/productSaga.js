@@ -10,6 +10,8 @@ import {
 } from "../actions/productActions";
 const baseURL = process.env.REACT_APP_BASEURL;
 
+
+
 function* fetchProducts() {
   try {
     const { data } = yield call(

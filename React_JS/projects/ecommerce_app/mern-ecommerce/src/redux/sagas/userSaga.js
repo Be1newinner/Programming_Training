@@ -1,9 +1,10 @@
-import { takeLatest, call, put } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_LOGOUT,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
   USER_REGISTER_FAIL,
@@ -19,6 +20,8 @@ const baseURL = process.env.REACT_APP_BASEURL;
 
 function* loginUser({ payload }) {
   try {
+    const { email, password } = payload;
+
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -26,9 +29,9 @@ function* loginUser({ payload }) {
     };
 
     const { data } = yield call(
-      axios.post,
+      [axios, "post"],
       `${baseURL ? baseURL : ""}/api/users/login`,
-      { email: payload.email, password: payload.password },
+      { email, password },
       config
     );
 
@@ -47,6 +50,8 @@ function* loginUser({ payload }) {
 
 function* registerUser({ payload }) {
   try {
+    const { name, email, password } = payload;
+
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -54,16 +59,15 @@ function* registerUser({ payload }) {
     };
 
     const { data } = yield call(
-      axios.post,
-      `${baseURL ? baseURL : ""}/api/users/register`,
-      { name: payload.name, email: payload.email, password: payload.password },
+      [axios, "post"],
+      `${baseURL ? baseURL : ""}/api/users`,
+      { name, email, password },
       config
     );
 
     yield put({ type: USER_REGISTER_SUCCESS, payload: data });
-    localStorage.setItem("userInfo", JSON.stringify(data));
-
     yield put({ type: USER_LOGIN_SUCCESS, payload: data });
+    localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
     yield put({
       type: USER_REGISTER_FAIL,
@@ -79,6 +83,7 @@ function* getUserDetails() {
   try {
     const config = {
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${
           JSON.parse(localStorage.getItem("userInfo")).token
         }`,
@@ -86,7 +91,7 @@ function* getUserDetails() {
     };
 
     const { data } = yield call(
-      axios.get,
+      [axios, "get"],
       `${baseURL ? baseURL : ""}/api/users/profile`,
       config
     );
@@ -115,14 +120,14 @@ function* updateUserProfile({ payload }) {
     };
 
     const { data } = yield call(
-      axios.put,
+      [axios, "put"],
       `${baseURL ? baseURL : ""}/api/users/profile`,
       payload,
       config
     );
 
     yield put({ type: USER_UPDATE_PROFILE_SUCCESS, payload: data });
-    yield put({ type: USER_DETAILS_SUCCESS, payload: data });
+    yield put({ type: USER_LOGIN_SUCCESS, payload: data });
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
     yield put({
@@ -135,9 +140,15 @@ function* updateUserProfile({ payload }) {
   }
 }
 
-export default function* userSaga() {
-  yield takeLatest(USER_REGISTER_REQUEST, registerUser);
+function* logoutUser() {
+  localStorage.removeItem("userInfo");
+  yield put({ type: USER_LOGOUT });
+}
+
+export default function* userSagas() {
   yield takeLatest(USER_LOGIN_REQUEST, loginUser);
+  yield takeLatest(USER_REGISTER_REQUEST, registerUser);
   yield takeLatest(USER_DETAILS_REQUEST, getUserDetails);
   yield takeLatest(USER_UPDATE_PROFILE_REQUEST, updateUserProfile);
+  yield takeLatest(USER_LOGOUT, logoutUser);
 }

@@ -9,6 +9,16 @@ import {
 import { productListReducer, productDetailsReducer } from "./productReducer";
 
 import cartReducer from "./cartReducer";
+import {
+  orderCreateReducer,
+  orderDetailsReducer,
+  orderListUserReducer,
+} from "./orderReducers";
+import {
+  addressAddReducer,
+  addressDeleteReducer,
+  addressListUserReducer,
+} from "./addressReducers";
 
 const rootReducer = combineReducers({
   userLogin: userLoginReducer,
@@ -18,6 +28,12 @@ const rootReducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
   cart: cartReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderListUser: orderListUserReducer,
+  addressListUser: addressListUserReducer,
+  addressAdd: addressAddReducer,
+  addressDelete: addressDeleteReducer,
 });
 
 export default rootReducer;

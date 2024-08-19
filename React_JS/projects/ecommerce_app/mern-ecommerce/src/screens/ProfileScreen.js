@@ -1,93 +1,144 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getUserDetails,
+  getUserProfile,
   updateUserProfile,
 } from "../redux/actions/userActions";
-import { useNavigate } from "react-router-dom";
 
 const ProfileScreen = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState(null);
-
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const userProfile = useSelector((state) => state.userProfile);
+  const { userInfo } = useSelector((state) => state.userLogin);
+  const { loading, error, success } = userProfile;
 
-  const userDetails = useSelector((state) => state.userDetails);
-  const { loading, error, user } = userDetails;
-
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
-
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  const { success } = userUpdateProfile;
+  const [profile, setProfile] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
   useEffect(() => {
     if (!userInfo) {
-      navigate("/login");
+      // Redirect to login if user is not logged in
+      window.location.href = "/login";
     } else {
-      if (!user.name) {
-        dispatch(getUserDetails());
-      } else {
-        setName(user.name);
-        setEmail(user.email);
-      }
+      dispatch(getUserProfile("profile"));
     }
-  }, [dispatch, navigate, userInfo, user]);
+  }, [dispatch, userInfo]);
 
-  const submitHandler = (e) => {
+  useEffect(() => {
+    if (userInfo) {
+      setProfile({
+        name: userInfo.name || "",
+        email: userInfo.email || "",
+        password: "",
+        confirmPassword: "",
+      });
+    }
+  }, [userInfo]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfile((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      setMessage("Passwords do not match");
+    if (profile.password !== profile.confirmPassword) {
+      // Handle password mismatch
+      alert("Passwords do not match");
     } else {
-      dispatch(updateUserProfile({ id: user._id, name, email, password }));
+      dispatch(updateUserProfile(profile));
     }
   };
 
   return (
-    <div className="profile-screen">
-      <h2>User Profile</h2>
-      {message && <p className="error">{message}</p>}
-      {error && <p className="error">{error}</p>}
-      {success && <p className="success">Profile Updated</p>}
-      <form onSubmit={submitHandler}>
-        <div>
-          <label>Name</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Email Address</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">{loading ? "Loading..." : "Update"}</button>
-      </form>
+    <div className="container mx-auto py-8">
+      <h1 className="text-3xl font-bold mb-6">Profile</h1>
+      {loading ? (
+        <div>Loading...</div>
+      ) : error ? (
+        <div className="text-red-500">{error}</div>
+      ) : success ? (
+        <div className="text-green-500">Profile Updated Successfully</div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={profile.name}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={profile.email}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={profile.password}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div>
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="confirmPassword"
+            >
+              Confirm Password
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={profile.confirmPassword}
+              onChange={handleChange}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Update Profile
+          </button>
+        </form>
+      )}
     </div>
   );
 };

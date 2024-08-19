@@ -2,6 +2,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_LOGOUT,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
   USER_REGISTER_FAIL,
@@ -13,10 +14,32 @@ import {
   USER_UPDATE_PROFILE_FAIL,
 } from "../actions/userActions";
 
-const initialState = {
-  loading: false,
-  userInfo: null,
-  error: null,
+export const userLoginReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_LOGIN_REQUEST:
+      return { loading: true };
+    case USER_LOGIN_SUCCESS:
+      return { loading: false, userInfo: action.payload };
+    case USER_LOGIN_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_LOGOUT:
+      return {};
+    default:
+      return state;
+  }
+};
+
+export const userRegisterReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_REGISTER_REQUEST:
+      return { loading: true };
+    case USER_REGISTER_SUCCESS:
+      return { loading: false, userInfo: action.payload };
+    case USER_REGISTER_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
 };
 
 export const userDetailsReducer = (state = { user: {} }, action) => {
@@ -39,32 +62,6 @@ export const userUpdateProfileReducer = (state = {}, action) => {
     case USER_UPDATE_PROFILE_SUCCESS:
       return { loading: false, success: true, userInfo: action.payload };
     case USER_UPDATE_PROFILE_FAIL:
-      return { loading: false, error: action.payload };
-    default:
-      return state;
-  }
-};
-
-export const userLoginReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case USER_LOGIN_REQUEST:
-      return { ...state, loading: true };
-    case USER_LOGIN_SUCCESS:
-      return { loading: false, userInfo: action.payload };
-    case USER_LOGIN_FAIL:
-      return { loading: false, error: action.payload };
-    default:
-      return state;
-  }
-};
-
-export const userRegisterReducer = (state = {}, action) => {
-  switch (action.type) {
-    case USER_REGISTER_REQUEST:
-      return { loading: true };
-    case USER_REGISTER_SUCCESS:
-      return { loading: false, userInfo: action.payload };
-    case USER_REGISTER_FAIL:
       return { loading: false, error: action.payload };
     default:
       return state;

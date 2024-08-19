@@ -2,7 +2,7 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 
-// @desc    Authenticate user & get token
+// @desc    Auth user & get token
 // @route   POST /api/users/login
 // @access  Public
 const authUser = asyncHandler(async (req, res) => {
@@ -25,7 +25,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 // @desc    Register a new user
-// @route   POST /api/users/register
+// @route   POST /api/users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
@@ -85,7 +85,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-
     if (req.body.password) {
       user.password = req.body.password;
     }
@@ -105,9 +104,4 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = {
-  authUser,
-  registerUser,
-  getUserProfile,
-  updateUserProfile,
-};
+module.exports = { authUser, registerUser, getUserProfile, updateUserProfile };
