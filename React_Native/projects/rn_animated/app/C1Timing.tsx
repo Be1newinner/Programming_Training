@@ -2,26 +2,28 @@ import React, { useEffect, useRef } from "react";
 import { Animated, View, Button, StyleSheet } from "react-native";
 
 const TimingExample = () => {
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeAnim = useRef(new Animated.Value(110)).current;
 
-  const fadeIn = () => {
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 2000,
-      useNativeDriver: true,
-    }).start();
-  };
+  const anim = Animated.timing(fadeAnim, {
+    toValue: 250,
+    duration: 5000,
+    useNativeDriver: false,
+  });
 
   // useEffect(() => {
-  //   fadeIn();
+  //   anim.start();
   // }, []);
 
   return (
     <View style={styles.container}>
-      <Animated.View style={{ opacity: fadeAnim }}>
+      <Animated.View
+        style={{ opacity: 1, width: fadeAnim, backgroundColor: "blue" }}
+      >
         <View style={styles.fadingBox} />
       </Animated.View>
-      <Button title="Fade In" onPress={fadeIn} />
+      <Button title="Fade In" onPress={() => anim.start()} />
+      <Button title="Fade In" onPress={() => anim.reset()} />
+      <Button title="Fade In" onPress={() => anim.stop()} />
     </View>
   );
 };
