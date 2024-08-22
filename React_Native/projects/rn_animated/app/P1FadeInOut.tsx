@@ -22,7 +22,7 @@ const FadeInOutExample = () => {
 
   return (
     <View style={styles.container}>
-      <Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+      <Animated.View style={{ opacity: fadeAnim }}>
         <View
           style={{
             height: 100,
@@ -42,11 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  fadingContainer: {
-    width: 100,
-    height: 100,
-    backgroundColor: "red",
   },
 });
 

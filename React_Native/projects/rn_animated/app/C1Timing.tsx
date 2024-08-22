@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Animated, View, Button, StyleSheet } from "react-native";
 
 const TimingExample = () => {
@@ -12,9 +12,13 @@ const TimingExample = () => {
     }).start();
   };
 
+  // useEffect(() => {
+  //   fadeIn();
+  // }, []);
+
   return (
     <View style={styles.container}>
-      <Animated.View style={[styles.fadingContainer, { opacity: fadeAnim }]}>
+      <Animated.View style={{ opacity: fadeAnim }}>
         <View style={styles.fadingBox} />
       </Animated.View>
       <Button title="Fade In" onPress={fadeIn} />
@@ -27,11 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-  },
-  fadingContainer: {
-    width: 100,
-    height: 100,
-    backgroundColor: "powderblue",
   },
   fadingBox: {
     width: 100,

@@ -1,10 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Animated, View, Button, StyleSheet } from "react-native";
 
 const SpringExample = () => {
+  // const [position, setPosition] = useState(0);
   const moveAnim = useRef(new Animated.Value(0)).current;
 
   const move = () => {
+    // let newPosition;
+
+    // if (position < 300) {
+    //   newPosition = position + 300;
+    // } else {
+    //   newPosition = position - 300;
+    // }
+    // setPosition(newPosition);
+
     Animated.spring(moveAnim, {
       toValue: 300,
       useNativeDriver: true,
