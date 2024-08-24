@@ -7,8 +7,8 @@ const DecayExample = () => {
   useEffect(() => {
     Animated.loop(
       Animated.decay(moveAnim, {
-        velocity: 100 / 100, // greater the denominator, less distance travelled
-        deceleration: 0.998,
+        velocity: 100 / 100,  // lesser the denominator farther the distance
+        deceleration: 0.9985, // greater value makes smoother stop.
         useNativeDriver: true,
       })
     ).start();

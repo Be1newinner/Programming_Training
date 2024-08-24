@@ -5,19 +5,23 @@ const StaggerExample = () => {
   const animValue1 = useRef(new Animated.Value(0)).current;
   const animValue2 = useRef(new Animated.Value(0)).current;
 
+  // The Animated.stagger function is used to create a staggered animation sequence where multiple animations are executed with a delay between the start of each animation. It allows you to create a cascading effect where animations start one after another, rather than all at once or in strict sequence.
+
   useEffect(() => {
-    Animated.stagger(500, [
-      Animated.timing(animValue1, {
-        toValue: 300,
-        duration: 1000,
-        useNativeDriver: true,
-      }),
-      Animated.timing(animValue2, {
-        toValue: 300,
-        duration: 1000,
-        useNativeDriver: true,
-      }),
-    ]).start();
+    Animated.loop(
+      Animated.stagger(1000, [
+        Animated.timing(animValue1, {
+          toValue: 300,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(animValue2, {
+          toValue: 300,
+          duration: 1000,
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
   }, []);
 
   return (
