@@ -16,7 +16,7 @@ const SpringExample = () => {
     // setPosition(newPosition);
 
     Animated.spring(moveAnim, {
-      toValue: 300,
+      toValue: 2,
       useNativeDriver: true,
     }).start();
   };
@@ -24,7 +24,15 @@ const SpringExample = () => {
   return (
     <View style={styles.container}>
       <Animated.View
-        style={[styles.movingBox, { transform: [{ translateY: moveAnim }] }]}
+        style={[
+          styles.movingBox,
+          {
+            // transform: [{ translateX: moveAnim }, { translateY: moveAnim }],
+
+            // transform: [{ rotateZ: "45deg" }],
+            transform: [{ scale: moveAnim }],
+          },
+        ]}
       />
       <Button title="Move" onPress={move} />
     </View>
