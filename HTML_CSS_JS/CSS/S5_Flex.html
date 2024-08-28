@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .parent {
+        background-color: rgb(248, 28, 28);
+        width: 500px;
+        height: 500px;
+        /* overflow: auto; */
+        /* auto | hidden | scroll | visible */
+        /* overflow-y: hidden; */
+        /* auto | hidden | scroll | visible */
+        /* padding: 10px; */
+        display: flex;
+        flex-wrap: wrap;
+        /* no-wrap | wrap | wrap-reverse */
+        /* justify-content: space-evenly; */
+        /* left | flex-start | center | right | flex-end | space-between | space-around */
+        /* align-content: space-evenly ; */
+        align-content: flex-start;
+        align-items: center;
+        /* gap: 20px; */
+        /* row-gap: 20px; */
+        /* column-gap: 20px; */
+      }
+      .child {
+        background-color: blue;
+        width: 150px;
+        height: 200px;
+        border: 1px solid black;
+        /* flex: 0; */
+      }
+
+      p,
+      span {
+        background-color: red;
+        /* display: block; */
+        display: inline;
+      }
+
+      /* span {
+        background-color: red;
+        display: inline;
+      } */
+
+      .nikku {
+        background-color: green;
+        /* flex: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <!-- <div class="child">5</div>
+      <div class="child">6</div>
+      <div class="child">7</div> -->
+    </div>
+
+
+    <!-- <p>Hello</p>
+    <span>Hello</span> -->
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="red"
+    >
+      <path
+        d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
+      />
+    </svg>
+  </body>
+</html>

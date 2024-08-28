@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .parent {
+        background-color: rgb(248, 28, 28);
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column;
+        justify-content: center; */
+      }
+      .child {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        /* flex: 0; */
+        /* flex-shrink: 1; */
+      }
+
+      p,
+      span {
+        background-color: red;
+        /* display: block; */
+        display: inline;
+      }
+
+      /* span {
+        background-color: red;
+        display: inline;
+      } */
+
+      .nikku {
+        background-color: green;
+        /* flex: 1; */
+        /* align-self: center; */
+        /* flex-start | flex-end | center */
+        /* flex-grow: 2; */
+        /* flex-basis: 250px; */
+        /* flex-shrink: 2; */
+
+      }
+
+      .nikku2 {
+        background-color: rgb(0, 255, 191);
+        /* flex: 1; */
+        /* align-self: center; */
+        /* flex-start | flex-end | center */
+        /* flex-grow: 1; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child nikku">1</div>
+      <div class="child nikku2">2</div>
+      <div class="child">3</div>
+      <div class="child">4</div>
+      <div class="child">5</div>
+      <div class="child">6</div>
+    </div>
+  </body>
+</html>
