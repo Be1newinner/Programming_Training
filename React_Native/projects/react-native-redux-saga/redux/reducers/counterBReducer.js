@@ -1,9 +1,10 @@
-const initialState = { value: 0, loading: false, error: null };
+import { INCREMENT_B } from "../constants/CounterB";
 
+const initialState = { value: 0, loading: false, error: null };
 const counterBReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INCREMENT_B":
-      return { ...state, value: state.value + 1 };
+    case INCREMENT_B:
+      return { ...state, value: state.value + action.payload };
     case "DECREMENT_B":
       return { ...state, value: state.value - 1 };
     case "FETCH_COUNTER_B_REQUEST":

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      header {
+        position: fixed;
+        top: 10px;
+        left: 5%;
+        /* margin-top: ; */
+        width: 90%;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+        z-index: 1;
+      }
+
+      .content {
+        position: sticky;
+        top: 0px;
+        background-color: green;
+      }
+
+      header,
+      footer {
+        background-color: red;
+        height: 50px;
+      }
+
+      main {
+        background-color: blue;
+        /* height: 100vh; */
+      }
+
+      .hero_section,
+      .sec_2,
+      .sec_3,
+      .sec_4,
+      .sec_5 {
+        background-color: black;
+        height: 300px;
+        border: 1px solid black;
+      }
+
+      .sec_2,
+      .sec_4 {
+        background-color: white;
+      }
+
+      .container {
+        background-color: yellow;
+        height: 100%;
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>dasd</header>
+
+    <main>
+      <section class="hero_section">
+        <div class="container">1</div>
+      </section>
+      <section class="sec_2">
+        <div class="container">
+          <div style="display: flex; gap: 10px" class="content">
+            <div>
+              <span>hello</span>
+              <div style="width: 100px; height: 100px; background-color: red">
+                a
+              </div>
+            </div>
+            <div>
+              <span>hello</span>
+              <div style="width: 100px; height: 100px; background-color: red">
+                a
+              </div>
+            </div>
+            <div>
+              <span>hello</span>
+              <div style="width: 100px; height: 100px; background-color: red">
+                a a
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec_3">
+        <div class="container">3</div>
+      </section>
+      <section class="sec_4">
+        <div class="container">4</div>
+      </section>
+      <section class="sec_5">
+        <div class="container">5</div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

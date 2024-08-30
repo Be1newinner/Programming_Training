@@ -1,4 +1,6 @@
-export const incrementB = () => ({ type: "INCREMENT_B" });
+import { INCREMENT_B } from "../constants/CounterB";
+
+export const incrementB = () => ({ type: INCREMENT_B });
 
 export const decrementB = () => ({ type: "DECREMENT_B" });
 
@@ -13,3 +15,5 @@ export const fetchCounterBFailure = (error) => ({
   type: "FETCH_COUNTER_B_FAILURE",
   payload: error,
 });
+
+export const incrementAction = { type: "INCREMENT_A" };

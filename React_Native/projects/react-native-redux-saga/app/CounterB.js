@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, Button, StyleSheet } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import {
   incrementB,
   decrementB,
   fetchCounterBRequest,
+  incrementAction,
 } from "../redux/actions/counterBActions";
 import { selectCounterBValue } from "../redux/selectors/counterBSelector";
 
@@ -12,11 +13,26 @@ export default function CounterB() {
   const count = useSelector(selectCounterBValue);
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    // console.log(count.value);
+    console.log(count);
+  }, [count]);
+
+  const incrementFunction = (value) => ({ type: "INCREMENT_B", payload: value });
+
+  // const incrementWithPayload = { type: "INCREMENT_B", payload: 5 };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.counterText}>Counter B: {count}</Text>
+      <Text style={styles.counterText}>Counter B: {count} </Text>
       <View style={styles.buttonContainer}>
-        <Button title="Increment" onPress={() => dispatch(incrementB())} />
+        <Button title="Increment" onPress={() => dispatch(incrementAction)} />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Increment_payload"
+          onPress={() => dispatch(incrementFunction(15))}
+        />
       </View>
       <View style={styles.buttonContainer}>
         <Button title="Decrement" onPress={() => dispatch(decrementB())} />
