@@ -18,6 +18,28 @@ export default function CounterB() {
     console.log(count);
   }, [count]);
 
+
+  // Logic of useSelector
+  // const initialData = {
+  //   counterA: {
+  //     value: 0,
+  //     error: null,
+  //   },
+  //   counterB: {
+  //     value: 0,
+  //     error: null,
+  //   },
+  //   }
+  // }
+
+  // function abc(arg){
+  //   return arg.counterA.value;
+  // }
+
+  // const selector = abc(initialData);
+
+  // console.log(selector);
+
   const incrementFunction = (value) => ({ type: "INCREMENT_B", payload: value });
 
   // const incrementWithPayload = { type: "INCREMENT_B", payload: 5 };
