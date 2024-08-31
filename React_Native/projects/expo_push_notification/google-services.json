@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "621809457183",
+    "firebase_url": "https://wingfi-9b5b7-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "wingfi-9b5b7",
+    "storage_bucket": "wingfi-9b5b7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621809457183:android:20a2983833f140d485dd2a",
+        "android_client_info": {
+          "package_name": "com.be1newinner.expo_push_notification_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621809457183-9a7e9pt4ri46nvm6pljq8203dnenu6ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRa16utJ4ZLnnCQrr8PhwoqfWCMTKUa_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621809457183-9a7e9pt4ri46nvm6pljq8203dnenu6ko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
