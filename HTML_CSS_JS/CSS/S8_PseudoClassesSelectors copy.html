@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 1px solid black;
+      }
+
+      .grandparent {
+        background: green;
+        height: 600px;
+        width: 600px;
+      }
+
+      /* div {
+              background-color: red;
+            } */
+
+      /* #c1 {
+              background-color: blue;
+            } */
+      /*
+            .parent div {
+              background-color: red;
+              height: 100px;
+              width: 100px;
+              border: 1px solid black;
+            } */
+
+      /* .parent > div {
+              background-color: blue;
+              height: 100px;
+              width: 100px;
+              border: 1px solid black;
+            }
+
+            h1 + p {
+              margin-top: 0;
+              background-color: red;
+            }
+
+            h1 ~ p {
+              margin-top: 0;
+              background-color: red;
+            }
+
+            h1:hover {
+              background-color: blue;
+              cursor: grab;
+       } 
+
+      .base:focus {
+        background-color: red;
+        padding: 10px;
+      }
+        */
+
+      .parent :nth-last-child(1) {
+        background-color: red;
+      }
+
+      .abc {
+        background-color: red;
+      }
+/* 
+      .parent :not(.abc) {
+        background-color: lightgray;
+      } */
+
+      .parent p:last-of-type {
+        background-color: lightgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandparent">
+      <div class="parent">
+        <!-- <div>
+          child 1
+          <div>2</div>
+          <div>3</div>
+        </div>
+
+        <div>child 2</div> -->
+
+        <input class="base" />
+
+        <h1>Hello</h1>
+        <p class="abc">Hello</p>
+        <!-- <div>
+          <p>Hello</p>
+        </div> -->
+        <p>Hello</p>
+        <p>Hello</p>
+      </div>
+    </div>
+  </body>
+</html>

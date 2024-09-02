@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .grandparent {
+        background: green;
+        height: 600px;
+        width: 600px;
+      }
+      /* [type="text"] {
+        height: 100px;
+      } */
+
+      /* [class~="input"] {
+        height: 100px;
+      } */
+
+      /* [id|="fr"] {
+        height: 100px;
+      } */
+      /* [id^="fr"] {
+        height: 100px;
+      } */
+      [id$="name"] {
+        height: 100px;
+      }
+      [id*="nam"] {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grandparent">
+      <label for="name">Name:</label>
+      <input type="text" id="frname" class="fr-name input" name="name" />
+      <br />
+      <br />
+      <label for="hobbies">hobbies:</label>
+      <input
+        type="text"
+        id="fr-hobbies"
+        class="fr-hobbies input"
+        name="hobbies"
+      />
+      <br />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" id="fr-password" name="password" />
+      <br />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <br />
+      <br />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="0" max="120" />
+      <br />
+      <br />
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" />
+      <br />
+      <br />
+      <label for="subscribe">
+        <input
+          type="checkbox"
+          id="subscribe"
+          name="subscribe"
+          value="newsletter"
+        />
+        Subscribe to newsletter
+      </label>
+      <label for="subscribe">
+        <input
+          type="checkbox"
+          id="subscribe"
+          name="subscribe"
+          value="newsletter"
+        />
+        Subscribe to newsletter
+      </label>
+      <br />
+      <br />
+      <label>
+        <input type="radio" name="gender" value="male" />
+        Male
+      </label>
+      <label>
+        <input type="radio" name="gender" value="female" />
+        Female
+      </label>
+      <br />
+      <br />
+      <label for="file">Upload File:</label>
+      <input type="file" id="file" name="file" />
+      <br />
+      <br />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button" onclick="alert('Button clicked')">Click Me</button>
+      <br />
+      <br />
+    </div>
+  </body>
+</html>

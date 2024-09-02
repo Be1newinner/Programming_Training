@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "_id": "6697c82b60b1af1bc84d657c",
+      "title": "Product 3",
+      "mrp": 300,
+      "price": 270,
+      "sku": "sku003",
+      "imageURL": "https://images.pexels.com/photos/12835313/pexels-photo-12835313.jpeg"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d657b",
+      "title": "Product 2",
+      "mrp": 200,
+      "price": 180,
+      "sku": "sku002",
+      "imageURL": "https://images.pexels.com/photos/16958879/pexels-photo-16958879/free-photo-of-silver-watch-on-black-background.jpeg"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d657e",
+      "title": "Product 5",
+      "mrp": 500,
+      "price": 450,
+      "sku": "sku005",
+      "imageURL": "https://images.pexels.com/photos/12835313/pexels-photo-12835313.jpeg"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d657f",
+      "title": "Product 6",
+      "mrp": 600,
+      "price": 540,
+      "sku": "sku006",
+      "imageURL": "https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d6585",
+      "title": "Product 12",
+      "mrp": 1200,
+      "price": 1080,
+      "sku": "sku012",
+      "imageURL": "https://images.pexels.com/photos/9561299/pexels-photo-9561299.jpeg"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d658a",
+      "title": "Product 17",
+      "mrp": 1700,
+      "price": 1530,
+      "sku": "sku017",
+      "imageURL": "https://images.pexels.com/photos/1983035/pexels-photo-1983035.jpeg",
+      "type": "camera"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d658c",
+      "title": "Product 19",
+      "mrp": 1900,
+      "price": 1710,
+      "sku": "sku019",
+      "imageURL": "https://images.pexels.com/photos/18641665/pexels-photo-18641665/free-photo-of-pendrive-on-white-background.png",
+      "type": "pendrive"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d6590",
+      "title": "Product 23",
+      "mrp": 2300,
+      "price": 2070,
+      "sku": "sku023",
+      "imageURL": "https://images.pexels.com/photos/20321375/pexels-photo-20321375/free-photo-of-close-up-of-a-man-holding-a-green-smartphone.jpeg",
+      "type": "joystick"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d6597",
+      "title": "Product 30",
+      "mrp": 3000,
+      "price": 2700,
+      "sku": "sku030",
+      "imageURL": "https://images.pexels.com/photos/6240876/pexels-photo-6240876.jpeg",
+      "type": "glass"
+    },
+    {
+      "_id": "6697c82b60b1af1bc84d657d",
+      "title": "Product 4",
+      "mrp": 400,
+      "price": 360,
+      "sku": "sku004",
+      "imageURL": "https://images.pexels.com/photos/12835313/pexels-photo-12835313.jpeg"
+    }
+  ],
+  "totalPages": 3,
+  "currentPage": "1"
+}
