@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Hello</p>
+
+    <p id="myId">0</p>
+
+    <h2 class="head">Hello1</h2>
+    <h2 class="head">Hello2</h2>
+    <h2 class="head">Hello3</h2>
+
+    <button onclick="showData()">Change</button>
+
+    <script>
+      const paragraph = document.getElementById("myId");
+      //   const paragraph = document.getElementsByClassName("head");
+      //   const paragraph = document.getElementsByTagName("h2");
+      //   const paragraph = document.querySelector("h2");
+      //   const paragraph = document.querySelector("#myID");
+      //   const paragraph = document.querySelectorAll(".head");
+
+      function showData() {
+        let value = paragraph.innerHTML;
+
+        paragraph.innerHTML = Number(value) + 1;
+        // alert(paragraph.innerHTML);
+        // alert(paragraph.innerText);
+        // console.log(paragraph[1].innerText);
+        // alert(paragraph[1].innerText);
+      }
+    </script>
+  </body>
+</html>
