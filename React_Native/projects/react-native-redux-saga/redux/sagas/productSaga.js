@@ -1,11 +1,23 @@
-import { call, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { FETCH_PRODUCT_REQUEST } from "../constants/productConstants";
 import { fetchProductAPI } from "@/apis/productApi";
-
+import { fetchProductFailure, fetchProductSuccess } from "../actions/productActions"
 
 
 function* FetchProuctSaga() {
-    const response = yield call(fetchProductAPI)
+    try {
+
+        const response = yield call(fetchProductAPI, 2, 3);
+
+        if (response?.products) {
+            yield put(fetchProductSuccess(response?.products))
+        } else {
+            throw ("INVALID API DATA!")
+        }
+
+    } catch (e) {
+        yield put(fetchProductFailure(e))
+    }
 }
 
 
