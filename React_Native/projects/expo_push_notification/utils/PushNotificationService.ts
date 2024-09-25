@@ -35,25 +35,25 @@ async function requestNotificationPermissions(): Promise<string | undefined> {
   return finalStatus;
 }
 
-async function getExpoPushToken() {
-  const projectId =
-    Constants?.expoConfig?.extra?.eas?.projectId ??
-    Constants?.easConfig?.projectId;
+  async function getExpoPushToken() {
+    const projectId =
+      Constants?.expoConfig?.extra?.eas?.projectId ??
+      Constants?.easConfig?.projectId;
 
-  if (!projectId) {
-    handleRegistrationError("Project ID not found");
-  }
+    if (!projectId) {
+      handleRegistrationError("Project ID not found");
+    }
 
-  try {
-    const pushTokenString = (
-      await Notifications.getExpoPushTokenAsync({ projectId })
-    ).data;
-    console.log(pushTokenString);
-    return pushTokenString;
-  } catch (e: unknown) {
-    handleRegistrationError(`${e}`);
+    try {
+      const pushTokenString = (
+        await Notifications.getExpoPushTokenAsync({ projectId })
+      ).data;
+      console.log(pushTokenString);
+      return pushTokenString;
+    } catch (e: unknown) {
+      handleRegistrationError(`${e}`);
+    }
   }
-}
 
 export async function registerForPushNotificationsAsync(): Promise<
   string | undefined

@@ -3,7 +3,7 @@ import { Animated, View, Button, StyleSheet } from "react-native";
 
 const SpringExample = () => {
   // const [position, setPosition] = useState(0);
-  const moveAnim = useRef(new Animated.Value(0)).current;
+  const moveAnim = useRef(new Animated.Value(1)).current;
 
   const move = () => {
     // let newPosition;

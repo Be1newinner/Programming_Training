@@ -77,6 +77,30 @@ const LoginPage = () => {
     }
   };
 
+  async function runApi() {
+    try {
+      const data = await fetch(UserName);
+      const response = await data.json();
+      console.log(response);
+      alert("response" + JSON.stringify(response));
+    } catch (e) {
+      alert(e);
+      console.log(e);
+    }
+  }
+
+  async function runApiStatic() {
+    try {
+      const data = await fetch("http://10.110.240.128:3000/products");
+      const response = await data.json();
+      console.log(response);
+      alert("response" + JSON.stringify(response));
+    } catch (e) {
+      alert(e);
+      console.log(e);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
@@ -103,9 +127,18 @@ const LoginPage = () => {
           styles.button,
           { opacity: pressed ? 0.6 : 1.0 },
         ]}
-        onPress={handleLogin}
+        onPress={runApi}
       >
         <Text style={styles.buttonText}>Login</Text>
+      </Pressable>
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          { opacity: pressed ? 0.6 : 1.0 },
+        ]}
+        onPress={runApiStatic}
+      >
+        <Text style={styles.buttonText}>Login2</Text>
       </Pressable>
       <Link
         href={"AuthStack/RegistrationPage"}

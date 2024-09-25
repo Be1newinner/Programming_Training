@@ -14,7 +14,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.be1newinner.ecommerce"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,8 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      ["expo-build-properties", { "android": { "usesCleartextTraffic": true } }]
     ],
     "experiments": {
       "typedRoutes": true
@@ -37,9 +39,6 @@
     "extra": {
       "router": {
         "origin": false
-      },
-      "eas": {
-        "projectId": "37670244-a1a9-47ae-811d-a7bc18a58956"
       }
     }
   }
