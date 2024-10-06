@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // const uri = process.env.MONGO_URI;
 
-const client = new MongoClient("mongodb://localhost:27017/ecommerce", { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient("mongodb://localhost:27017/ecommerce");
 
 async function connectDB() {
     try {
@@ -17,4 +17,6 @@ async function connectDB() {
     }
 }
 
-module.exports = { client, connectDB };
+const ecommerce_db = client.db();
+
+module.exports = { client, ecommerce_db, connectDB };
