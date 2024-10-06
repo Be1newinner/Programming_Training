@@ -454,7 +454,7 @@ etag@~1.8.1:
   resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
-"express-mongoose-api@file:F:\\Codes\\Programming_Training\\Node_JS\\packages\\express_mongoose_structure":
+"express-mongoose-api@file:/mnt/Other/Codes/Programming_Training/Node_JS/packages/express_mongoose_structure":
   version "1.0.0"
   resolved "file:packages/express_mongoose_structure"
   dependencies:

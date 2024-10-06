@@ -5,7 +5,14 @@ const {
   authenticateToken,
 } = require("../controllers/userController");
 
+
+
 const router = express.Router();
+
+// const registerUser1 = (req, res) => {
+//   res.end("dafsdaf")
+// }
+
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
