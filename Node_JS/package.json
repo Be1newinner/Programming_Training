@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --watch",
-    "dev": "npx nodemon"
+    "start": "node index.js"
   },
   "dependencies": {
+    "@inquirer/prompts": "^7.0.1",
+    "@inquirer/select": "^4.0.1",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",

@@ -12,6 +12,9 @@ const { connectDB } = require("./src/config/db");
 
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(cors({
+  origin: "*"
+}));
 
 const swaggerOptions = {
   apis: ["src/**/*.js"],
@@ -22,7 +25,7 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 
 app.use(
-  "/docs",
+  "/",
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocs, {
     customCssUrl:
@@ -33,14 +36,13 @@ app.use(
 
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(cors({
-  origin: "*"
-}));
+
 
 connectDB();
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/enc", );
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
