@@ -42,7 +42,7 @@ connectDB();
 
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
-app.use("/api/enc", );
+// app.use("/api/enc", );
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
