@@ -16,6 +16,7 @@ const registerUser = async (req, res) => {
     const user = await newUser.save();
 
     res.status(201).json({ error: "", token, user });
+    
   } catch (err) {
     res.status(400).json({
       error: err.message,
