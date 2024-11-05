@@ -1,5 +1,5 @@
 const { generateKeyPairSync, publicEncrypt, privateDecrypt } = require('crypto');
-
+const jwt = require("jsonwebtoken")
 function main() {
 
   // Generate RSA key pair and output keys in PEM format
@@ -15,11 +15,14 @@ function main() {
     },
   });
 
+  var token = jwt.sign({ user: 'be1newinner' }, privateKey, { algorithm: 'RS256' });
+  console.log(token)
+
   console.log("Public Key:\n", publicKey);
   console.log("Private Key:\n", privateKey);
 
   const data = 'Sensitive data';
-
+  console.log(Buffer.from(data))
   // Encrypt the data using the public key
   const encryptedData = publicEncrypt(publicKey, Buffer.from(data));
   console.log("Encrypted Data:", encryptedData.toString('hex'));
