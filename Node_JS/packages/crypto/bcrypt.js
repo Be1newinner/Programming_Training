@@ -4,7 +4,6 @@ function main() {
     const saltRounds = 10;
     const myPlaintextPassword = 'Vijay@123';
 
-
     // for hashing password
     bcrypt.genSalt(saltRounds, function (err, salt) {
         bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
