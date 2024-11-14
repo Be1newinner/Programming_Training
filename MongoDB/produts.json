@@ -1,0 +1,1083 @@
+[
+  {
+    "product_id": "1",
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with customizable buttons",
+    "price": 29.99,
+    "category": "Electronics",
+    "stock": 150,
+    "brand": "TechPro",
+    "rating": 4.5,
+    "tags": ["mouse", "wireless", "ergonomic"],
+    "reviews": [
+      {
+        "review_id": "r1",
+        "author": "John Doe",
+        "rating": 5,
+        "comment": "Great mouse, very comfortable to use!",
+        "date": "2024-09-01"
+      },
+      {
+        "review_id": "r2",
+        "author": "Jane Smith",
+        "rating": 4,
+        "comment": "Good performance, but the battery life could be better.",
+        "date": "2024-08-20"
+      }
+    ]
+  },
+  {
+    "product_id": "2",
+    "name": "Bluetooth Headphones",
+    "description": "Over-ear Bluetooth headphones with noise cancellation",
+    "price": 89.99,
+    "category": "Electronics",
+    "stock": 85,
+    "brand": "SoundWave",
+    "rating": 4.7,
+    "tags": ["headphones", "Bluetooth", "noise-cancellation"],
+    "reviews": [
+      {
+        "review_id": "r3",
+        "author": "Alice Johnson",
+        "rating": 5,
+        "comment": "Amazing sound quality and great noise cancellation!",
+        "date": "2024-09-02"
+      },
+      {
+        "review_id": "r4",
+        "author": "Bob Brown",
+        "rating": 4,
+        "comment": "Good headphones but a bit pricey.",
+        "date": "2024-08-25"
+      }
+    ]
+  },
+  {
+    "product_id": "3",
+    "name": "Laptop Stand",
+    "description": "Adjustable laptop stand for ergonomic typing position",
+    "price": 39.99,
+    "category": "Office",
+    "stock": 120,
+    "brand": "ErgoTech",
+    "rating": 4.3,
+    "tags": ["laptop", "stand", "adjustable"],
+    "reviews": [
+      {
+        "review_id": "r5",
+        "author": "Chris Lee",
+        "rating": 4,
+        "comment": "Sturdy and adjustable, but a bit bulky.",
+        "date": "2024-08-15"
+      },
+      {
+        "review_id": "r6",
+        "author": "Dana White",
+        "rating": 4,
+        "comment": "Helps with my posture, but it could be more compact.",
+        "date": "2024-08-18"
+      }
+    ]
+  },
+  {
+    "product_id": "4",
+    "name": "Portable Charger",
+    "description": "10,000mAh portable charger with fast charging",
+    "price": 25.99,
+    "category": "Electronics",
+    "stock": 200,
+    "brand": "PowerPlus",
+    "rating": 4.6,
+    "tags": ["charger", "portable", "fast-charging"],
+    "reviews": [
+      {
+        "review_id": "r7",
+        "author": "Emily Davis",
+        "rating": 5,
+        "comment": "Charges my phone quickly, very handy!",
+        "date": "2024-09-01"
+      },
+      {
+        "review_id": "r8",
+        "author": "Frank Green",
+        "rating": 4,
+        "comment": "Useful and efficient, but it heats up a bit.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "5",
+    "name": "4K Monitor",
+    "description": "27-inch 4K UHD monitor with IPS panel",
+    "price": 299.99,
+    "category": "Electronics",
+    "stock": 45,
+    "brand": "VisionPro",
+    "rating": 4.8,
+    "tags": ["monitor", "4K", "IPS"],
+    "reviews": [
+      {
+        "review_id": "r9",
+        "author": "George Martin",
+        "rating": 5,
+        "comment": "Fantastic display quality, worth every penny!",
+        "date": "2024-09-03"
+      },
+      {
+        "review_id": "r10",
+        "author": "Helen Scott",
+        "rating": 4,
+        "comment": "Great monitor but a bit expensive.",
+        "date": "2024-08-28"
+      }
+    ]
+  },
+  {
+    "product_id": "6",
+    "name": "Smartphone Case",
+    "description": "Durable smartphone case with shock absorption",
+    "price": 14.99,
+    "category": "Accessories",
+    "stock": 300,
+    "brand": "CaseMate",
+    "rating": 4.4,
+    "tags": ["case", "smartphone", "shock-absorption"],
+    "reviews": [
+      {
+        "review_id": "r11",
+        "author": "Ivy Lewis",
+        "rating": 4,
+        "comment": "Protects well but could be more stylish.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r12",
+        "author": "Jake Wilson",
+        "rating": 4,
+        "comment": "Good protection, fits well.",
+        "date": "2024-08-23"
+      }
+    ]
+  },
+  {
+    "product_id": "7",
+    "name": "Digital Camera",
+    "description": "12MP digital camera with Wi-Fi connectivity",
+    "price": 199.99,
+    "category": "Electronics",
+    "stock": 60,
+    "brand": "PixelMax",
+    "rating": 4.6,
+    "tags": ["camera", "digital", "Wi-Fi"],
+    "reviews": [
+      {
+        "review_id": "r13",
+        "author": "Laura Adams",
+        "rating": 5,
+        "comment": "Excellent camera with great features!",
+        "date": "2024-09-01"
+      },
+      {
+        "review_id": "r14",
+        "author": "Mike Thompson",
+        "rating": 4,
+        "comment": "Good quality, but the interface is a bit confusing.",
+        "date": "2024-08-26"
+      }
+    ]
+  },
+  {
+    "product_id": "8",
+    "name": "Electric Kettle",
+    "description": "1.7L electric kettle with automatic shut-off",
+    "price": 39.99,
+    "category": "Home",
+    "stock": 150,
+    "brand": "KettleKing",
+    "rating": 4.7,
+    "tags": ["kettle", "electric", "automatic-shutoff"],
+    "reviews": [
+      {
+        "review_id": "r15",
+        "author": "Nancy Clark",
+        "rating": 5,
+        "comment": "Heats water quickly and safely.",
+        "date": "2024-09-02"
+      },
+      {
+        "review_id": "r16",
+        "author": "Oliver Harris",
+        "rating": 4,
+        "comment": "Works well, but the cord is a bit short.",
+        "date": "2024-08-21"
+      }
+    ]
+  },
+  {
+    "product_id": "9",
+    "name": "Yoga Mat",
+    "description": "High-density yoga mat with non-slip surface",
+    "price": 24.99,
+    "category": "Fitness",
+    "stock": 200,
+    "brand": "FlexiFit",
+    "rating": 4.5,
+    "tags": ["yoga", "mat", "non-slip"],
+    "reviews": [
+      {
+        "review_id": "r17",
+        "author": "Paula Rodriguez",
+        "rating": 5,
+        "comment": "Great grip and comfortable to use.",
+        "date": "2024-08-20"
+      },
+      {
+        "review_id": "r18",
+        "author": "Quinn Edwards",
+        "rating": 4,
+        "comment": "Good quality, but could be thicker.",
+        "date": "2024-08-15"
+      }
+    ]
+  },
+  {
+    "product_id": "10",
+    "name": "Office Chair",
+    "description": "Ergonomic office chair with lumbar support",
+    "price": 149.99,
+    "category": "Furniture",
+    "stock": 75,
+    "brand": "ComfortSeat",
+    "rating": 4.7,
+    "tags": ["chair", "office", "ergonomic"],
+    "reviews": [
+      {
+        "review_id": "r19",
+        "author": "Rachel Walker",
+        "rating": 5,
+        "comment": "Very comfortable and supportive.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r20",
+        "author": "Sam Carter",
+        "rating": 4,
+        "comment": "Great chair, but the assembly was difficult.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "11",
+    "name": "Wireless Keyboard",
+    "description": "Compact wireless keyboard with backlight",
+    "price": 49.99,
+    "category": "Electronics",
+    "stock": 100,
+    "brand": "TypeMaster",
+    "rating": 4.6,
+    "tags": ["keyboard", "wireless", "backlight"],
+    "reviews": [
+      {
+        "review_id": "r21",
+        "author": "Tina Murphy",
+        "rating": 5,
+        "comment": "Excellent typing experience and the backlight is a nice feature.",
+        "date": "2024-08-29"
+      },
+      {
+        "review_id": "r22",
+        "author": "Victor Smith",
+        "rating": 4,
+        "comment": "Works well, but the keys are a bit noisy.",
+        "date": "2024-08-24"
+      }
+    ]
+  },
+  {
+    "product_id": "12",
+    "name": "Smart Thermostat",
+    "description": "Programmable smart thermostat with Wi-Fi connectivity",
+    "price": 119.99,
+    "category": "Home",
+    "stock": 60,
+    "brand": "HeatWave",
+    "rating": 4.8,
+    "tags": ["thermostat", "smart", "Wi-Fi"],
+    "reviews": [
+      {
+        "review_id": "r23",
+        "author": "Wendy King",
+        "rating": 5,
+        "comment": "Easy to install and use. Great for controlling home temperature remotely.",
+        "date": "2024-08-28"
+      },
+      {
+        "review_id": "r24",
+        "author": "Xander Lee",
+        "rating": 4,
+        "comment": "Works well but the setup could be more intuitive.",
+        "date": "2024-08-19"
+      }
+    ]
+  },
+  {
+    "product_id": "13",
+    "name": "Coffee Maker",
+    "description": "12-cup coffee maker with programmable timer",
+    "price": 69.99,
+    "category": "Home",
+    "stock": 90,
+    "brand": "BrewMaster",
+    "rating": 4.4,
+    "tags": ["coffee", "maker", "programmable"],
+    "reviews": [
+      {
+        "review_id": "r25",
+        "author": "Yara Brown",
+        "rating": 4,
+        "comment": "Good coffee maker, but the timer is a bit confusing.",
+        "date": "2024-08-20"
+      },
+      {
+        "review_id": "r26",
+        "author": "Zane White",
+        "rating": 5,
+        "comment": "Makes great coffee and easy to clean.",
+        "date": "2024-08-17"
+      }
+    ]
+  },
+  {
+    "product_id": "14",
+    "name": "Electric Toothbrush",
+    "description": "Rechargeable electric toothbrush with multiple brushing modes",
+    "price": 89.99,
+    "category": "Health",
+    "stock": 80,
+    "brand": "BrightSmile",
+    "rating": 4.7,
+    "tags": ["toothbrush", "electric", "rechargeable"],
+    "reviews": [
+      {
+        "review_id": "r27",
+        "author": "Amy Johnson",
+        "rating": 5,
+        "comment": "Cleans very effectively and has a long battery life.",
+        "date": "2024-08-25"
+      },
+      {
+        "review_id": "r28",
+        "author": "Brian Harris",
+        "rating": 4,
+        "comment": "Great toothbrush, but the modes are hard to switch.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "15",
+    "name": "Air Purifier",
+    "description": "Air purifier with HEPA filter for home use",
+    "price": 129.99,
+    "category": "Home",
+    "stock": 70,
+    "brand": "CleanAir",
+    "rating": 4.5,
+    "tags": ["air", "purifier", "HEPA"],
+    "reviews": [
+      {
+        "review_id": "r29",
+        "author": "Clara Wilson",
+        "rating": 5,
+        "comment": "Effective air purifier with noticeable improvement in air quality.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r30",
+        "author": "David Lee",
+        "rating": 4,
+        "comment": "Good performance but a bit noisy.",
+        "date": "2024-08-19"
+      }
+    ]
+  },
+  {
+    "product_id": "16",
+    "name": "Fitness Tracker",
+    "description": "Water-resistant fitness tracker with heart rate monitoring",
+    "price": 59.99,
+    "category": "Fitness",
+    "stock": 150,
+    "brand": "FitTrack",
+    "rating": 4.6,
+    "tags": ["fitness", "tracker", "heart-rate"],
+    "reviews": [
+      {
+        "review_id": "r31",
+        "author": "Eva Martinez",
+        "rating": 5,
+        "comment": "Great tracker with accurate readings and good battery life.",
+        "date": "2024-08-28"
+      },
+      {
+        "review_id": "r32",
+        "author": "Frank Wilson",
+        "rating": 4,
+        "comment": "Good features but a bit bulky.",
+        "date": "2024-08-20"
+      }
+    ]
+  },
+  {
+    "product_id": "17",
+    "name": "Smartwatch",
+    "description": "Smartwatch with GPS and health monitoring features",
+    "price": 199.99,
+    "category": "Electronics",
+    "stock": 50,
+    "brand": "SmartTime",
+    "rating": 4.8,
+    "tags": ["smartwatch", "GPS", "health-monitoring"],
+    "reviews": [
+      {
+        "review_id": "r33",
+        "author": "Grace Taylor",
+        "rating": 5,
+        "comment": "Excellent smartwatch with all the features I need.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r34",
+        "author": "Henry Adams",
+        "rating": 4,
+        "comment": "Great features but a bit pricey.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "18",
+    "name": "Electric Grill",
+    "description": "Indoor electric grill with adjustable temperature control",
+    "price": 79.99,
+    "category": "Home",
+    "stock": 40,
+    "brand": "GrillMaster",
+    "rating": 4.4,
+    "tags": ["grill", "electric", "temperature-control"],
+    "reviews": [
+      {
+        "review_id": "r35",
+        "author": "Iris Evans",
+        "rating": 4,
+        "comment": "Good grill but takes a while to heat up.",
+        "date": "2024-08-24"
+      },
+      {
+        "review_id": "r36",
+        "author": "Jack Turner",
+        "rating": 5,
+        "comment": "Works great for indoor grilling and easy to clean.",
+        "date": "2024-08-21"
+      }
+    ]
+  },
+  {
+    "product_id": "19",
+    "name": "Gaming Mouse",
+    "description": "High-precision gaming mouse with customizable DPI settings",
+    "price": 59.99,
+    "category": "Electronics",
+    "stock": 90,
+    "brand": "GameTech",
+    "rating": 4.6,
+    "tags": ["mouse", "gaming", "DPI"],
+    "reviews": [
+      {
+        "review_id": "r37",
+        "author": "Kaitlyn Scott",
+        "rating": 5,
+        "comment": "Perfect for gaming, precise and responsive.",
+        "date": "2024-08-27"
+      },
+      {
+        "review_id": "r38",
+        "author": "Liam Moore",
+        "rating": 4,
+        "comment": "Good performance but could use more customization options.",
+        "date": "2024-08-19"
+      }
+    ]
+  },
+  {
+    "product_id": "20",
+    "name": "Blender",
+    "description": "High-power blender with multiple speed settings",
+    "price": 89.99,
+    "category": "Home",
+    "stock": 110,
+    "brand": "BlendMaster",
+    "rating": 4.5,
+    "tags": ["blender", "high-power", "speed-settings"],
+    "reviews": [
+      {
+        "review_id": "r39",
+        "author": "Mia Johnson",
+        "rating": 5,
+        "comment": "Powerful blender with great performance.",
+        "date": "2024-08-26"
+      },
+      {
+        "review_id": "r40",
+        "author": "Nathan Williams",
+        "rating": 4,
+        "comment": "Good blender but a bit noisy.",
+        "date": "2024-08-20"
+      }
+    ]
+  },
+  {
+    "product_id": "21",
+    "name": "Bluetooth Speaker",
+    "description": "Portable Bluetooth speaker with deep bass",
+    "price": 79.99,
+    "category": "Electronics",
+    "stock": 85,
+    "brand": "SoundWave",
+    "rating": 4.7,
+    "tags": ["speaker", "Bluetooth", "portable"],
+    "reviews": [
+      {
+        "review_id": "r41",
+        "author": "Olivia Davis",
+        "rating": 5,
+        "comment": "Excellent sound quality and very portable.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r42",
+        "author": "Liam Harris",
+        "rating": 4,
+        "comment": "Good speaker but the battery life could be better.",
+        "date": "2024-08-26"
+      }
+    ]
+  },
+  {
+    "product_id": "22",
+    "name": "Digital Camera",
+    "description": "High-resolution digital camera with optical zoom",
+    "price": 349.99,
+    "category": "Electronics",
+    "stock": 40,
+    "brand": "PhotoPro",
+    "rating": 4.8,
+    "tags": ["camera", "digital", "high-resolution"],
+    "reviews": [
+      {
+        "review_id": "r43",
+        "author": "Emma Wilson",
+        "rating": 5,
+        "comment": "Fantastic camera with sharp images and easy to use.",
+        "date": "2024-08-25"
+      },
+      {
+        "review_id": "r44",
+        "author": "Noah Green",
+        "rating": 4,
+        "comment": "Great quality but a bit heavy.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "23",
+    "name": "Electric Kettle",
+    "description": "Stainless steel electric kettle with quick boil feature",
+    "price": 39.99,
+    "category": "Home",
+    "stock": 120,
+    "brand": "HeatWave",
+    "rating": 4.6,
+    "tags": ["kettle", "electric", "stainless-steel"],
+    "reviews": [
+      {
+        "review_id": "r45",
+        "author": "Lucas White",
+        "rating": 5,
+        "comment": "Boils water quickly and looks great.",
+        "date": "2024-08-24"
+      },
+      {
+        "review_id": "r46",
+        "author": "Sophia Anderson",
+        "rating": 4,
+        "comment": "Good kettle but the lid is a bit hard to open.",
+        "date": "2024-08-19"
+      }
+    ]
+  },
+  {
+    "product_id": "24",
+    "name": "Portable Charger",
+    "description": "High-capacity portable charger with dual USB ports",
+    "price": 29.99,
+    "category": "Electronics",
+    "stock": 150,
+    "brand": "PowerUp",
+    "rating": 4.5,
+    "tags": ["charger", "portable", "dual-USB"],
+    "reviews": [
+      {
+        "review_id": "r47",
+        "author": "Mia Taylor",
+        "rating": 5,
+        "comment": "Very handy and charges devices quickly.",
+        "date": "2024-08-23"
+      },
+      {
+        "review_id": "r48",
+        "author": "James Martinez",
+        "rating": 4,
+        "comment": "Works well but the size is a bit bulky.",
+        "date": "2024-08-20"
+      }
+    ]
+  },
+  {
+    "product_id": "25",
+    "name": "Yoga Mat",
+    "description": "High-density yoga mat with non-slip surface",
+    "price": 24.99,
+    "category": "Fitness",
+    "stock": 100,
+    "brand": "FlexFit",
+    "rating": 4.8,
+    "tags": ["yoga", "mat", "non-slip"],
+    "reviews": [
+      {
+        "review_id": "r49",
+        "author": "Ava Lee",
+        "rating": 5,
+        "comment": "Perfect for yoga, very comfortable and durable.",
+        "date": "2024-08-27"
+      },
+      {
+        "review_id": "r50",
+        "author": "Ethan Clark",
+        "rating": 4,
+        "comment": "Good mat but a little heavy to carry around.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "26",
+    "name": "Electric Toothbrush",
+    "description": "Rechargeable electric toothbrush with multiple brushing modes",
+    "price": 99.99,
+    "category": "Health",
+    "stock": 75,
+    "brand": "BrushPro",
+    "rating": 4.7,
+    "tags": ["toothbrush", "electric", "rechargeable"],
+    "reviews": [
+      {
+        "review_id": "r51",
+        "author": "Oliver Young",
+        "rating": 5,
+        "comment": "Cleans very well and the battery lasts long.",
+        "date": "2024-08-26"
+      },
+      {
+        "review_id": "r52",
+        "author": "Charlotte Walker",
+        "rating": 4,
+        "comment": "Great performance but a bit pricey.",
+        "date": "2024-08-23"
+      }
+    ]
+  },
+  {
+    "product_id": "27",
+    "name": "Gaming Console",
+    "description": "Next-gen gaming console with 4K support",
+    "price": 499.99,
+    "category": "Electronics",
+    "stock": 30,
+    "brand": "GameMax",
+    "rating": 4.9,
+    "tags": ["gaming", "console", "4K"],
+    "reviews": [
+      {
+        "review_id": "r53",
+        "author": "Daniel Harris",
+        "rating": 5,
+        "comment": "Incredible gaming experience with 4K support.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r54",
+        "author": "Ella Brown",
+        "rating": 4,
+        "comment": "Great console but the storage is a bit limited.",
+        "date": "2024-08-28"
+      }
+    ]
+  },
+  {
+    "product_id": "28",
+    "name": "Vacuum Cleaner",
+    "description": "High-power vacuum cleaner with HEPA filter",
+    "price": 149.99,
+    "category": "Home",
+    "stock": 60,
+    "brand": "CleanSweep",
+    "rating": 4.6,
+    "tags": ["vacuum", "high-power", "HEPA"],
+    "reviews": [
+      {
+        "review_id": "r55",
+        "author": "Nora Lewis",
+        "rating": 5,
+        "comment": "Excellent suction power and easy to use.",
+        "date": "2024-08-25"
+      },
+      {
+        "review_id": "r56",
+        "author": "Liam White",
+        "rating": 4,
+        "comment": "Works well but is a bit noisy.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "29",
+    "name": "Electric Pressure Cooker",
+    "description": "Multi-function electric pressure cooker with programmable settings",
+    "price": 89.99,
+    "category": "Home",
+    "stock": 80,
+    "brand": "CookMaster",
+    "rating": 4.7,
+    "tags": ["pressure-cooker", "electric", "programmable"],
+    "reviews": [
+      {
+        "review_id": "r57",
+        "author": "Mason Davis",
+        "rating": 5,
+        "comment": "Makes cooking so much easier and the presets are handy.",
+        "date": "2024-08-24"
+      },
+      {
+        "review_id": "r58",
+        "author": "Ava Green",
+        "rating": 4,
+        "comment": "Good performance but a bit complex to understand the settings.",
+        "date": "2024-08-19"
+      }
+    ]
+  },
+  {
+    "product_id": "30",
+    "name": "Electric Shaver",
+    "description": "Cordless electric shaver with multiple shaving modes",
+    "price": 69.99,
+    "category": "Health",
+    "stock": 65,
+    "brand": "ShavePro",
+    "rating": 4.5,
+    "tags": ["shaver", "electric", "cordless"],
+    "reviews": [
+      {
+        "review_id": "r59",
+        "author": "Jackson Adams",
+        "rating": 5,
+        "comment": "Provides a close shave and is very convenient to use.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r60",
+        "author": "Emily Wilson",
+        "rating": 4,
+        "comment": "Works well but takes a bit longer to charge.",
+        "date": "2024-08-27"
+      }
+    ]
+  },
+
+  {
+    "product_id": "31",
+    "name": "Smart Watch",
+    "description": "Feature-packed smart watch with health tracking",
+    "price": 199.99,
+    "category": "Electronics",
+    "stock": 55,
+    "brand": "TimeTech",
+    "rating": 4.7,
+    "tags": ["smartwatch", "health-tracking", "wearable"],
+    "reviews": [
+      {
+        "review_id": "r61",
+        "author": "Liam Carter",
+        "rating": 5,
+        "comment": "Amazing features and very useful for tracking health metrics.",
+        "date": "2024-08-28"
+      },
+      {
+        "review_id": "r62",
+        "author": "Zoe Miller",
+        "rating": 4,
+        "comment": "Great watch but the battery life could be better.",
+        "date": "2024-08-24"
+      }
+    ]
+  },
+  {
+    "product_id": "32",
+    "name": "Kitchen Blender",
+    "description": "High-speed kitchen blender with multiple blending modes",
+    "price": 89.99,
+    "category": "Home",
+    "stock": 70,
+    "brand": "BlendMaster",
+    "rating": 4.6,
+    "tags": ["blender", "kitchen", "high-speed"],
+    "reviews": [
+      {
+        "review_id": "r63",
+        "author": "Jack Brown",
+        "rating": 5,
+        "comment": "Blends everything smoothly and very powerful.",
+        "date": "2024-08-29"
+      },
+      {
+        "review_id": "r64",
+        "author": "Lily Scott",
+        "rating": 4,
+        "comment": "Good performance but a bit loud.",
+        "date": "2024-08-26"
+      }
+    ]
+  },
+  {
+    "product_id": "33",
+    "name": "Electric Grill",
+    "description": "Indoor electric grill with adjustable temperature control",
+    "price": 119.99,
+    "category": "Home",
+    "stock": 45,
+    "brand": "GrillMaster",
+    "rating": 4.8,
+    "tags": ["grill", "electric", "temperature-control"],
+    "reviews": [
+      {
+        "review_id": "r65",
+        "author": "Emma Hall",
+        "rating": 5,
+        "comment": "Excellent grill for indoor use with precise temperature control.",
+        "date": "2024-08-27"
+      },
+      {
+        "review_id": "r66",
+        "author": "Mason Davis",
+        "rating": 4,
+        "comment": "Works well but takes a while to heat up.",
+        "date": "2024-08-23"
+      }
+    ]
+  },
+  {
+    "product_id": "34",
+    "name": "Cordless Drill",
+    "description": "Powerful cordless drill with multiple speed settings",
+    "price": 129.99,
+    "category": "Tools",
+    "stock": 60,
+    "brand": "DrillMaster",
+    "rating": 4.7,
+    "tags": ["drill", "cordless", "powerful"],
+    "reviews": [
+      {
+        "review_id": "r67",
+        "author": "Oliver Johnson",
+        "rating": 5,
+        "comment": "Very powerful drill and convenient to use without cords.",
+        "date": "2024-08-25"
+      },
+      {
+        "review_id": "r68",
+        "author": "Ava Lee",
+        "rating": 4,
+        "comment": "Great tool but a bit heavy for extended use.",
+        "date": "2024-08-20"
+      }
+    ]
+  },
+  {
+    "product_id": "35",
+    "name": "Adjustable Desk Chair",
+    "description": "Ergonomic adjustable desk chair with lumbar support",
+    "price": 149.99,
+    "category": "Furniture",
+    "stock": 50,
+    "brand": "ErgoChair",
+    "rating": 4.6,
+    "tags": ["chair", "adjustable", "ergonomic"],
+    "reviews": [
+      {
+        "review_id": "r69",
+        "author": "Isabella Turner",
+        "rating": 5,
+        "comment": "Very comfortable and supportive for long hours of work.",
+        "date": "2024-08-29"
+      },
+      {
+        "review_id": "r70",
+        "author": "James White",
+        "rating": 4,
+        "comment": "Good chair but a bit tricky to assemble.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "36",
+    "name": "Home Theater System",
+    "description": "Complete home theater system with surround sound",
+    "price": 499.99,
+    "category": "Electronics",
+    "stock": 35,
+    "brand": "SoundMaster",
+    "rating": 4.9,
+    "tags": ["home-theater", "surround-sound", "complete-system"],
+    "reviews": [
+      {
+        "review_id": "r71",
+        "author": "Sophia Martinez",
+        "rating": 5,
+        "comment": "Amazing sound quality and very immersive experience.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r72",
+        "author": "Ethan Green",
+        "rating": 4,
+        "comment": "Great system but setup was a bit complicated.",
+        "date": "2024-08-25"
+      }
+    ]
+  },
+  {
+    "product_id": "37",
+    "name": "Air Purifier",
+    "description": "Compact air purifier with HEPA filter and multiple modes",
+    "price": 99.99,
+    "category": "Home",
+    "stock": 85,
+    "brand": "PureAir",
+    "rating": 4.6,
+    "tags": ["air-purifier", "HEPA", "compact"],
+    "reviews": [
+      {
+        "review_id": "r73",
+        "author": "Emma Williams",
+        "rating": 5,
+        "comment": "Effective at cleaning the air and very quiet.",
+        "date": "2024-08-26"
+      },
+      {
+        "review_id": "r74",
+        "author": "Noah King",
+        "rating": 4,
+        "comment": "Good purifier but the filter replacement is expensive.",
+        "date": "2024-08-22"
+      }
+    ]
+  },
+  {
+    "product_id": "38",
+    "name": "Digital Thermometer",
+    "description": "Quick and accurate digital thermometer with fever alert",
+    "price": 19.99,
+    "category": "Health",
+    "stock": 150,
+    "brand": "HealthCare",
+    "rating": 4.5,
+    "tags": ["thermometer", "digital", "quick"],
+    "reviews": [
+      {
+        "review_id": "r75",
+        "author": "Lucas Brown",
+        "rating": 5,
+        "comment": "Very accurate and easy to use.",
+        "date": "2024-08-30"
+      },
+      {
+        "review_id": "r76",
+        "author": "Olivia Smith",
+        "rating": 4,
+        "comment": "Works well but the display could be a bit larger.",
+        "date": "2024-08-25"
+      }
+    ]
+  },
+  {
+    "product_id": "39",
+    "name": "Fitness Tracker",
+    "description": "Wearable fitness tracker with heart rate monitoring",
+    "price": 89.99,
+    "category": "Fitness",
+    "stock": 90,
+    "brand": "FitTrack",
+    "rating": 4.8,
+    "tags": ["fitness-tracker", "heart-rate-monitor", "wearable"],
+    "reviews": [
+      {
+        "review_id": "r77",
+        "author": "Ava Taylor",
+        "rating": 5,
+        "comment": "Excellent tracker with accurate heart rate monitoring.",
+        "date": "2024-08-27"
+      },
+      {
+        "review_id": "r78",
+        "author": "Daniel Green",
+        "rating": 4,
+        "comment": "Good performance but the strap could be more comfortable.",
+        "date": "2024-08-23"
+      }
+    ]
+  },
+  {
+    "product_id": "40",
+    "name": "Wireless Earbuds",
+    "description": "High-quality wireless earbuds with noise cancellation",
+    "price": 129.99,
+    "category": "Electronics",
+    "stock": 80,
+    "brand": "SoundBuds",
+    "rating": 4.7,
+    "tags": ["earbuds", "wireless", "noise-cancellation"],
+    "reviews": [
+      {
+        "review_id": "r79",
+        "author": "Emma Wilson",
+        "rating": 5,
+        "comment": "Great sound quality and comfortable fit.",
+        "date": "2024-08-26"
+      },
+      {
+        "review_id": "r80",
+        "author": "Ryan Moore",
+        "rating": 4,
+        "comment": "Excellent earbuds but the case could be more durable.",
+        "date": "2024-08-22"
+      }
+    ]
+  }
+]
