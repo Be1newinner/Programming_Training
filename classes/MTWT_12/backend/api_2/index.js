@@ -1,3 +1,4 @@
+// Auth Service
 // POST => /login       => Login
 // POST => /signup      => signup
 // PUT => /reset-password   => Reset
@@ -19,39 +20,6 @@ const users = [
 ]
 
 app.use(express.json())
-
-// Passing details in url as params
-
-// app.post("/login/:user/:pwrd", (req, res) => {
-
-// const data = req.params;
-// const user = data.user;
-// const pwrd = data.pwrd;
-
-// const user = req.params.user;
-// const pwrd = req.params.pwrd;
-
-// const { user, pwrd } = req.params;
-// console.log({ user, pwrd })
-
-//     res.send({
-//         message: "Logged in"
-//     })
-// })
-
-// Passing details in url as params
-
-// app.post("/login", (req, res) => {
-
-//     // const data = req.query;
-//     // const { name, age } = req.query;
-//     console.log({ data })
-
-//     res.send({
-//         message: "Logged in"
-//     })
-
-// })
 
 app.post("/login", (req, res) => {
 
