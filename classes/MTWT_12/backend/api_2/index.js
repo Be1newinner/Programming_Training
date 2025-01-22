@@ -6,7 +6,7 @@
 const express = require("express")
 const app = express();
 
-const users = [
+let users = [
     {
         user: "be1newinner",
         pwrd: "123456",
@@ -59,7 +59,7 @@ app.post("/signup", (req, res) => {
 
 
         const prevLength = users.length;
-        users.push({
+        const newLength = users.push({
             user: username,
             pwrd: password,
             name: fullname
@@ -67,7 +67,7 @@ app.post("/signup", (req, res) => {
 
         console.log(users)
 
-        const newLength = users.length
+        // const newLength = users.length
 
         if (newLength > prevLength) {
             return res.send({
@@ -90,6 +90,28 @@ app.post("/signup", (req, res) => {
 })
 
 app.put("/reset-password", (req, res) => {
+    const { username, old_password, new_password } = req.body;
+
+    const toModify = users.find((item) => {
+        return item.user == username && item.pwrd == old_password
+    })
+
+    if (!toModify) {
+        return res.send({
+            message: "User doesn't exist!"
+        })
+    }
+
+    const restUsers = users.filter((item) => {
+        return item.user != username
+    })
+
+    toModify.pwrd = new_password;
+
+    // users = [...restUsers, toModify]
+    users = restUsers;
+    users.push(toModify)
+
     res.send({
         message: "reset password"
     })
