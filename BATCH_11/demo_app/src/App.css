@@ -1,0 +1,19 @@
+.container {
+  background-color: red;
+}
+
+header {
+  height: 50px;
+  background-color: black;
+  display: flex;
+  gap: 10px;
+}
+
+.header_menu {
+  background-color: grey;
+  padding: 15px 30px;
+}
+
+.header_menu span {
+  color: white;
+}
