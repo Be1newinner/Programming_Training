@@ -1,78 +1,55 @@
-require("dotenv").config();
+const express = require('express');
+const AWS = require('@aws-sdk/client-s3');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const path = require('path');
 
-// Import the necessary AWS SDK v3 packages
-const { S3Client, PutObjectCommand, GetObjectCommand, DeleteObjectCommand } = require('@aws-sdk/client-s3');
-const fs = require('fs');
+const app = express();
 
-// Create an S3 client instance (AWS SDK v3)
-const s3Client = new S3Client({
-    region: 'ap-south-1',
+const bucketName = 'aws-ap-south-1-008971631073-shipsar-demo-pipe';
+
+const s3 = new AWS.S3Client({
+    region: "ap-south-1",
     credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID, // recommended to set in .env
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY, // recommended to set in .env
     },
+})
+
+
+const upload = multer({
+    storage: multerS3({
+        s3,
+        bucket: bucketName,
+        acl: "public-read",
+        metadData: (req, file, next) => {
+            next(null, {
+                fieldName: file.fieldName
+            })
+        },
+        key: (req, file, next) => {
+            next(null, Date.now().toString() + path.extname(file.originalname))
+        }
+    })
+})
+
+app.post("/upload_image", upload.single('image'), (req, res) => {
+    try {
+
+        if (!req.file) {
+            return res.status(400).send("NO FILE UPLOADED!");
+        }
+        res.json({
+            imageurl: req.file.location
+        })
+    } catch (error) {
+        console.log({ error })
+    }
+})
+
+
+// Start the server
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
-// Create an S3 client instance (AWS SDK v3)
-
-// Bucket name
-const bucketName = 'aws-ap-south-1-008971631073-shipsar-demo-pipe';
-
-// Function to upload a file
-async function uploadFile(filePath, key) {
-    try {
-        const fileContent = fs.readFileSync(filePath);
-        const params = {
-            Bucket: bucketName,
-            Key: key, // Name of the file in S3
-            Body: fileContent,
-        };
-
-        const command = new PutObjectCommand(params);
-        const result = await s3Client.send(command);
-        console.log(`File uploaded successfully. Status Code: ${result.$metadata.httpStatusCode}`);
-    } catch (error) {
-        console.error('Error uploading file:', error);
-    }
-}
-
-// Function to download a file
-async function downloadFile(key, downloadPath) {
-    try {
-        const params = {
-            Bucket: bucketName,
-            Key: key,
-        };
-
-        const command = new GetObjectCommand(params);
-        const data = await s3Client.send(command);
-        const file = fs.createWriteStream(downloadPath);
-        data.Body.pipe(file);
-
-        file.on('finish', () => {
-            console.log(`File downloaded successfully to ${downloadPath}`);
-        });
-    } catch (error) {
-        console.error('Error downloading file:', error);
-    }
-}
-
-// Function to delete a file
-async function deleteFile(key) {
-    try {
-        const params = {
-            Bucket: bucketName,
-            Key: key,
-        };
-
-        const command = new DeleteObjectCommand(params);
-        await s3Client.send(command);
-        console.log(`File deleted successfully from S3: ${key}`);
-    } catch (error) {
-        console.error('Error deleting file:', error);
-    }
-}
-
-// Usage examples
-// uploadFile('hello.txt', 'hello.txt');
-downloadFile('hello.txt', 'downloaded-hello.txt');
-// deleteFile('uploaded-file.jpg');

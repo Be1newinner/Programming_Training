@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<title>
+Inputs
+</title>
+</head>
+
+<body>
+
+
+<form>
+
+<div>
+ <label for="fullname">Name: </label>
+ <input type="text" id="fullname" name="fullname" minlength="3" maxlength="20" required  />
+</div>
+
+<!--
+<br />
+
+<label>
+ <span>Name:</span> 
+ <input type="text" id="fullname" name="fullname" />
+</label>
+
+-->
+
+<br />
+
+<label>
+ <span>Password:</span> 
+ <input type="password" id="password" name="password" />
+</label>
+
+<br />
+<br />
+
+<div>
+ <label for="age">Age: </label>
+ <input type="number" id="age" name="age" min="18" max="100" />
+</div>
+
+<div>
+ <label for="phone">Phone : </label>
+ <input type="number" id="phone" name="phone" min="6000000000" max="9999999999" />
+</div>
+
+<br />
+<br />
+
+<label>
+  <input type="radio" name="gender" value="male" />
+  Male
+</label>
+<label>
+  <input type="radio" name="gender" value="female" />
+  Female
+</label>
+
+<div>
+<label for="subscribe">
+  <input type="checkbox" id="subscribe" name="subscribe" value="newsletter"/>
+  Subscribe to newsletter
+</label>
+
+<label for="subscribe">
+  <input type="checkbox" id="subscribe" name="subscribe" value="newsletter" />
+  Subscribe to newsletter
+</label>
+
+<label for="subscribe">
+  <input type="checkbox" id="subscribe" name="subscribe" value="newsletter" />
+  Subscribe to newsletter
+</label>
+</div>
+
+<input type="reset" />
+<input type="submit" />
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="10" cols="50"></textarea>
+
+
+<label for="car">Choose a car:</label>
+<select id="car" name="car">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+
+<fieldset>
+  <legend>Personal</legend>
+  
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" />
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" />
+</fieldset>
+
+</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+
+<title>Flex</title>
+
+<style>
+
+.parent {
+
+background:red;
+height:500px;
+width:500px;
+display:flex;
+flex-direction:row;
+align-content: flex-start; 
+gap:5px;
+
+/* 
+flex-wrap:wrap;
+column-gap:5px;
+row-gap:5px;
+column-gap:5px;
+
+justify-content: flex-start;
+
+align-items: center;
+
+*/
+
+}
+
+.child {
+background:blue;
+height:100px;
+width:101px;
+/*flex-shrink: 1;*/
+}
+
+.child1 {
+flex-shrink: 10
+}
+
+/* 
+
+.child1 {
+flex-grow: 2;
+}
+
+.child2 {
+flex-grow:1;
+}
+
+.child1 {
+flex-basis: calc(33.334% - 3.334px);
+}
+
+.child2 {
+flex-basis: calc(33.333% - 3.333px);
+}
+
+.child3 {
+flex-basis: calc(33.333% - 3.333px);
+}
+
+*/
+
+</style>
+
+</head>
+<body>
+
+<div class="parent">
+<div class="child child1">1</div>
+<div class="child child2">2</div>
+<div class="child child3">3</div>
+<div class="child child4">4</div>
+<div class="child">5</div>
+<div class="child">6</div>
+<div class="child">7</div>
+
+</div>
+
+
+</body>
+</html>

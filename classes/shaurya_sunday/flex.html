@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<style>
+
+#box {
+ background:green;
+ width:500px;
+ height:500px;
+ display:flex;
+ flex-wrap:wrap;
+ /*
+ justify-content: left, right, center, space-between, space-around;
+ */
+  
+  /*
+    align-items: flex-start, center, flex-end;
+   align-content: flex-start, center, flex-end, space-between, space-around, space-evenly;
+ gap:10px;
+ row-gap:10px;
+      flex-direction: row;
+  */
+  
+     align-content: flex-start;
+     column-gap:10px;
+     
+     
+     flex-direction: column;
+}
+
+.child {
+ background:red;
+ width:110px;
+ height:110px;
+}
+
+/*
+div {
+ background:red;
+ /*
+ width:10%;
+ height:20%;
+*/
+
+ width:200px;
+ height:200px;
+}
+
+*/
+
+</style>
+</head>
+<body>
+
+<div id="box">
+
+	<div class="child">1</div>
+	<div class="child">2</div>
+	<div class="child">3</div>
+	<div class="child">4</div>
+	<div class="child">5</div>
+	<div class="child">6</div>
+	<div class="child">7</div>
+	
+<!--	
+	<div class="child">8</div>
+	<div class="child">9</div>
+	<div class="child">10</div>
+-->
+
+</div>
+
+</body>
+</html>

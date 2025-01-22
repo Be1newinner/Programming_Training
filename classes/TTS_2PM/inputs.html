@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Html Input Elements</title>
+</head>
+<body>
+
+<form>
+
+<div>	
+<label for="fullname"> Name : </label>
+<input placeholder="e.g. vijay" value="" id="fullname" name="fullname" minlength="5" maxlength="10" />
+</div>
+
+<br />
+
+<div>
+<label for="phone"> Phone : </label>
+<input type="number" placeholder="e.g. 1234567890" value="" id="phone" name="phone" min="6000000000" max="9999999999" />
+</div>
+
+<br />
+
+<div>
+<label for="password"> Password : </label>
+<input type="password" placeholder="e.g. 1234567890" value="" id="password" name="password" />
+</div>
+
+<br />
+
+<label for="email">Email:</label> 
+<input type="email" id="email" name="email" />
+
+<br /><br />
+
+<label for="age">Age:</label>
+<input type="number" id="age" name="age" min="0" max="120" />
+
+<br /><br />
+
+<label for="birthdate">Birthdate:</label>
+<input type="date" id="birthdate" name="birthdate" />
+
+<br /><br />
+
+<label for="birthtime">Birthdate:</label>
+<input type="time" id="birthtime" name="birthtime" />
+
+<br /><br />
+
+<label for="subscribe">
+Subscribe to newsletter
+  <input type="checkbox" id="subscribe" name="subscribe" value="newsletter" />  
+</label>
+
+<label for="subscribe2">
+Subscribe to newsletter
+  <input type="checkbox" id="subscribe2" name="subscribe2" value="newsletter" />  
+</label>
+
+<br /><br />
+
+<label>
+  <input type="radio" name="gender" value="male" />
+  Male
+</label>
+<label>
+  <input type="radio" name="gender" value="female" />
+  Female
+</label>
+
+<br/> <br />
+
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="4" cols="50"></textarea>
+
+<br /><br />
+
+<label for="car">Choose a car:</label>
+<select id="car" name="car">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+<br /><br />
+
+<br /><br />
+
+<fieldset>
+  <legend>Personal Information</legend>
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" />
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" />
+</fieldset>
+
+<input type="submit" />
+</form>
+
+</body>
+</html>

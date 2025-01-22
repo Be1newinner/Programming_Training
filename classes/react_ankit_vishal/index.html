@@ -1,0 +1,30 @@
+<script>
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", "Basic bXdfdXNlcl91YXQ6SEZDQDA5ODch");
+
+  const raw = JSON.stringify({
+    mobile: "8130506284",
+    source: "SPICEMONEY",
+    subSource: "SPICEMONEY",
+    scenario: 6,
+    requestedOn: "SPICEMONEY-0001-20-10-2024:10:24:34",
+    pincode: 160020,
+  });
+
+  const requestOptions = {
+    method: "POST",
+    headers: myHeaders,
+    body: raw,
+    redirect: "follow",
+  };
+
+  fetch(
+    "https://services-qa.herofincorp.com/api/leadEligibility/lead/otp",
+    requestOptions
+  )
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.error(error));
+    
+</script>
