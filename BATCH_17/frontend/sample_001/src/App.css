@@ -1,0 +1,14 @@
+.card_container {
+  background-color: pink;
+  width: 200px;
+  padding: 10px;
+  border: 2px solid gray;
+  box-shadow: 5px 5px 10px 0 grey;
+  border-radius: 10px;
+}
+
+.parent {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
