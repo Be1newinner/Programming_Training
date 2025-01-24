@@ -11,7 +11,7 @@ for i in range(2,10):
 for i in range(2,30,3):
    print(i)
    
-"""
+
 
 #while loop
 isRun = False
@@ -23,22 +23,27 @@ while isRun == False:
    if(i > 5):
       isRun = True
 
-
 """
-Q.1
-Table print krni hai!
-output:
-2 x 1 = 2
-2 x 2 = 4
-2 x 3 = 6
-2 x 4 = 8
-2 x 5 = 10
-2 x 6 = 12
-2 x 7 = 14
-2 x 8 = 16
-2 x 9 = 18
-2 x 10 = 20
 
+# nested for loop
 
-
+for i in range(10):
+    for j in range(5):
+        print(i,j)
+        
+        
 """
+outer loop => 0 => 5 inner loop
+outer loop => 1 => 5 inner loop
+outer loop => 2 => 5 inner loop
+"""
+
+*
+**
+***
+****
+*****
+
+
+
+
