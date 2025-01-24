@@ -1,3 +1,5 @@
+import { string } from "prop-types";
+
 function Card({ title, price, description }) {
   return (
     <div className="card_container">
@@ -7,5 +9,11 @@ function Card({ title, price, description }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  title: string.isRequired,
+  price: string.isRequired,
+  description: string.isRequired,
+};
 
 export default Card;
