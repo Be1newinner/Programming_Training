@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const { connectDB, loginEmail, signup } = require("./src/config/db");
 
-app.use(express.json());  // To parse JSON data in the request body
+app.use(express.json());  
 
 // Connect to MongoDB before starting the server
 connectDB().then(() => {
