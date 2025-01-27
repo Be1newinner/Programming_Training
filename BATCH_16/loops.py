@@ -23,27 +23,37 @@ while isRun == False:
    if(i > 5):
       isRun = True
 
-"""
+
 
 # nested for loop
 
 for i in range(10):
     for j in range(5):
         print(i,j)
-        
-        
-"""
+                
 outer loop => 0 => 5 inner loop
 outer loop => 1 => 5 inner loop
 outer loop => 2 => 5 inner loop
-"""
+
 
 *
 **
 ***
 ****
 *****
+"""
+
+for i in range(1,6):
+    for j in range(i):
+        print("*", end="")
+    print("")
+    
 
 
-
+print("Hello", end="")
+print("Hello")
+print("Hello")
+print("Hello")
+print("Hello")
+print("Hello")
 
