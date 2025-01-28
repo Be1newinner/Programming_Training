@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const { connectDB, loginEmail, signup } = require("./src/config/db");
+const { connectDB, loginEmail, signup, resetPassword } = require("./src/config/db");
 
-app.use(express.json());  
+app.use(express.json());
 
 // Connect to MongoDB before starting the server
 connectDB().then(() => {
@@ -17,6 +17,13 @@ connectDB().then(() => {
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
     const data = await loginEmail(email, password);
+    console.log(data);
+    res.send({ data });
+});
+
+app.post('/reset', async (req, res) => {
+    const { email, password, new_password } = req.body;
+    const data = await resetPassword(email, password, new_password);
     console.log(data);
     res.send({ data });
 });

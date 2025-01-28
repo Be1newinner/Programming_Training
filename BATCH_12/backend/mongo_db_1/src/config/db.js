@@ -37,4 +37,19 @@ async function signup(email, password) {
     }
 }
 
-module.exports = { connectDB, loginEmail, signup }
+async function resetPassword(email, password, new_password) {
+    try {
+        const users = database.collection('users');
+        const user = await users.updateOne({ email, password }, {
+            $set: {
+                password: new_password
+            }
+        });
+        console.log(user);
+        return user;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+module.exports = { connectDB, loginEmail, signup, resetPassword }
