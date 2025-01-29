@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
 export default function ToDo() {
-  const TodoData = [
+  const [TodoData, setTodoData] = useState([
     {
       id: 1,
       title: "First Item",
@@ -10,15 +11,20 @@ export default function ToDo() {
       id: 2,
       title: "Second Item",
     },
-    {
-      id: 3,
-      title: "Third Item",
-    },
-    {
-      id: 4,
-      title: "fourth Item",
-    },
-  ];
+  ]);
+
+  const [title, setTitle] = useState("");
+
+  function addTodo() {
+    setTodoData((items) => [
+      ...items,
+      {
+        id: Date.now(),
+        title: title,
+      },
+    ]);
+    setTitle("");
+  }
 
   return (
     <div className="w-96 bg-white min-h-96 rounded-lg shadow-lg p-4 border border-gray-200 overflow-auto">
@@ -30,8 +36,13 @@ export default function ToDo() {
         <input
           placeholder="Add an item..."
           className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
-        <button className="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600 transition">
+        <button
+          onClick={addTodo}
+          className="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600 transition"
+        >
           ADD
         </button>
       </div>
