@@ -93,3 +93,44 @@ ages = [15,12,19,18,20,25, 1, 100]
 ### Add all items in List
 # total_sum = sum(ages)
 # print(total_sum)
+
+
+
+### Loop through List
+# manual method
+# names[0] += " Kumar" 
+
+# for i in names:
+#    print(i)
+
+# for i in range(len(names)):
+#   names[i] += " Kumar"
+
+# print(names)
+
+
+
+### List Comprehensions
+# names2 = [x + " Kumar" for x in names]
+# print(names2)
+
+# 1. build a lsit of quare of items from 1 to 10
+# squared_list = [1,4,9,16,25,36,49,64,81,100]
+# squared_list = []
+
+# for x in range(1,10):
+#    squared_list.append(x**2)
+
+# squared_list = [x**2 for x in range(1,10)]
+
+# 2. build a lsit of quare of items from 1 to 10, where the number is even
+
+# squared_list = []
+# for x in range(1,10):
+#   if(x % 2 == 0):
+#       squared_list.append(x**2)
+
+
+# squared_list = [x**2 for x in range(2,10,2)]
+squared_list = [x**2 for x in range(1,10) if x % 2 == 0]
+print(squared_list)
