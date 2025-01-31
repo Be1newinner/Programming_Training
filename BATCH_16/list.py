@@ -132,5 +132,52 @@ ages = [15,12,19,18,20,25, 1, 100]
 
 
 # squared_list = [x**2 for x in range(2,10,2)]
-squared_list = [x**2 for x in range(1,10) if x % 2 == 0]
-print(squared_list)
+# squared_list = [x**2 for x in range(1,10) if x % 2 == 0]
+# print(squared_list)
+
+
+
+### Question 2. 
+# input
+l2 = [
+[1,2,3],
+[4,5,6],
+[2,3,4]
+]
+
+# expected output
+# l2_2 = [
+# [2,4,6],
+# [8,10,12],
+# [4,6,8]
+# ]
+
+# l2_2 = []
+
+# for item in l2:
+#    temp = []
+#    for x in item:
+#        temp.append(x*2)
+#    l2_2.append(temp)
+
+# print(l2_2)
+
+
+### Looping in 3D List
+l3 =   [
+    [
+       [4,5,6], 
+       [4,5,6]
+    ],
+    [
+       [4,5,6], 
+       [4,5,6]
+    ]
+]
+
+for x in l3:
+    for y in x:
+        for z in y:
+            print(z)
+            
+
