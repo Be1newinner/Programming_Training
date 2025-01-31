@@ -14,16 +14,40 @@ export default function ToDo() {
   ]);
 
   const [title, setTitle] = useState("");
+  const [editID, setEditID] = useState(0);
 
   function addTodo() {
-    setTodoData((items) => [
-      ...items,
-      {
-        id: Date.now(),
-        title: title,
-      },
-    ]);
-    setTitle("");
+    if (title) {
+      if (editID) {
+        setTodoData((items) => [
+          ...items.filter((e) => e.id !== editID),
+          { id: editID, title },
+        ]);
+      } else {
+        setTodoData((items) => [
+          ...items,
+          {
+            id: Date.now(),
+            title: title,
+          },
+        ]);
+      }
+
+      setEditID(0);
+      setTitle("");
+    } else {
+      alert("Title can not be empty!");
+    }
+  }
+
+  function deleteTodo(id: number) {
+    setTodoData((items) => items.filter((e) => e.id !== id));
+    alert(`Todo ${id} deleted!`);
+  }
+
+  function editTodo(id: number, temp_title: string) {
+    setTitle(temp_title);
+    setEditID(id);
   }
 
   return (
@@ -43,27 +67,49 @@ export default function ToDo() {
           onClick={addTodo}
           className="w-full bg-blue-500 text-white py-2 rounded-md shadow-md hover:bg-blue-600 transition"
         >
-          ADD
+          {editID ? "Save" : "ADD"}
         </button>
       </div>
       <div className="flex flex-col gap-2">
-        {TodoData.map((item) => {
-          return <ToDoItem key={item.id} title={item.title} />;
+        {TodoData.sort((a, b) => a.id - b.id).map((item) => {
+          return (
+            <ToDoItem
+              key={item.id}
+              title={item.title}
+              editTodoFunction={() => editTodo(item.id, item.title)}
+              // editdeleteFunction={deleteTodo}
+              editdeleteFunction={() => deleteTodo(item.id)}
+            />
+          );
         })}
       </div>
     </div>
   );
 }
 
-export function ToDoItem({ title }: { title: string }) {
+export function ToDoItem({
+  title,
+  editTodoFunction,
+  editdeleteFunction,
+}: {
+  title: string;
+  editTodoFunction: () => void;
+  editdeleteFunction: () => void;
+}) {
   return (
     <div className="w-full bg-red-100 border border-red-300 p-3 rounded-md flex justify-between items-center shadow-sm">
       <span className="text-gray-800">{title}</span>
       <div className="space-x-2">
-        <button className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition">
+        <button
+          onClick={editTodoFunction}
+          className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 transition"
+        >
           Edit
         </button>
-        <button className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition">
+        <button
+          onClick={editdeleteFunction}
+          className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition"
+        >
           Delete
         </button>
       </div>
