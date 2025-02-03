@@ -1,6 +1,9 @@
 const argon2 = require('argon2');
 
-
+// We are using Argon2
+// Argon 2 documentations: -
+// https://www.npmjs.com/package/argon2
+// https://github.com/ranisalt/node-argon2/wiki/Options
 async function Hashing(password) {
     try {
         const hash = await argon2.hash(password);
