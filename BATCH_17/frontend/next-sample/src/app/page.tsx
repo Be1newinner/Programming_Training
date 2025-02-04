@@ -17,6 +17,11 @@ export default function Home() {
             To Do Page
           </div>
         </Link>
+        <Link href="/effect">
+          <div className="px-6 py-3 bg-red-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-red-600 transition">
+            Use Effect Page
+          </div>
+        </Link>
       </div>
     </div>
   );
