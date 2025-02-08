@@ -1,11 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import { CounterContext } from "@/services/counter.context";
+import React, { useContext } from "react";
 
 export default function Counter() {
-  const [count] = useState(0);
+  const { increaseCounter, counterValue } = useContext(CounterContext);
+
   return (
     <div>
-      <h1>{count}</h1>
+      <h1>{counterValue}</h1>
+      <button onClick={increaseCounter}>Increase</button>
     </div>
   );
 }
