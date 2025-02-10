@@ -13,12 +13,11 @@ name2 = "Ajay"
 age2 = 30
 roll2 = 2
 
-
 """
 
 ##### CRUD OPERATIONS OF DICTIONARY
 
-### CREATE 
+### CREATE  ---------------------------------------------------------------------- 
 
 vijay = {
    "name": "Vijay",
@@ -32,26 +31,56 @@ ajay = {
    "roll": 2
 }
 
-### READ
+### READ  ----------------------------------------------------------------------
 
-print(vijay)
-print(type(vijay))
+# print(vijay)
+# print(type(vijay))
 # print(ajay["class"]) # Output => ERROR
 # print(ajay.get("class")) # Output => None
 
-print(ajay.get("class", 1)) # Output => 1
+# print(ajay.get("class", 1)) # Output => 1
 
-### UPDATE
+### UPDATE  ----------------------------------------------------------------------
 
 # vijay["name"] = "Vijay Kumar"
 
-# CREATE NEW KEY
+# CREATE NEW KEY ******************************************
 
-vijay["class"] = "1st"
+# vijay["class"] = "1st"
 
 
-### DELETE KEYs
+### DELETE KEYs ----------------------------------------------------------------------
 
-del vijay["roll"]
+# del vijay["roll"] # It will remove the 'roll' key from vijay dict. 
 
-print(vijay)
+# print(vijay) # Output => {'name': 'Vijay', 'age': 25}
+
+
+### clear -----------------------------------------------------------------------
+
+# vijay.clear()
+
+### deep copy dictionary ----------------------------------------------------------
+
+# sanjay = vijay
+# sanjay["name"] = "Sanjay"
+
+### shallow copy ------------------------------------------------------------
+
+# sanjay = vijay.copy()
+# sanjay["name"] = "Sanjay"
+# print("SANJAY => ", sanjay)
+
+### in operator ---------------------------------------------------------------
+
+# print("name" in vijay) # Output => TRUE / FALSE
+
+### len operator  -----------------------------------------------------
+
+# print(len(vijay))
+
+
+
+
+
+print("VIJAY => ", vijay)
