@@ -71,7 +71,7 @@ ajay = {
 # sanjay["name"] = "Sanjay"
 # print("SANJAY => ", sanjay)
 
-### in operator ---------------------------------------------------------------
+### in ( Membership ) operator ---------------------------------------------------------------
 
 # print("name" in vijay) # Output => TRUE / FALSE
 
@@ -80,7 +80,85 @@ ajay = {
 # print(len(vijay))
 
 
+### Iteration --------------------------------------------------
+##### value() method
+
+# print(vijay.values())
+
+# for item in vijay.values():
+#    print(item)
+
+
+##### keys()
+
+# print(vijay.keys())
+
+# for item in vijay.keys():
+#   print(item)
+
+
+##### Key value both => items()
+
+# print(vijay.items())
+
+# for x,y in vijay.items():
+#   print(x, y)
+
+
+##### pop method => del alternative 
+
+# data = vijay.pop("roll")
+# data = vijay.popitem()
+# data,value = vijay.popitem()
+
+# print(data, value)
+
+# print("VIJAY => ", vijay)
+
+### fromkeys ---------------------------------------------------------------------
+
+# ls = ["name","age","roll", "class", "address"]
+
+# name = dict.fromkeys(ls,None)
+# print(name)
+
+
+''' Questions -------------------------------------------------------------------
+
+Q.1.  
+ sentence = "The rock lives in mountains . The mountains lives is new york . " 
+
+ 
+
+
+'''
+
+sentence = "The rock lives in mountains . The mountains lives in new york ." 
+ls = sentence.split(" ")
+data = {}
+
+for x in ls:
+    data[x] = data.get(x, 0) + 1  # {"The" : 1}
+
+
+# for x in ls:
+#   data[x] = data.get(x, 0) + 1
+
+
+print(data)
 
 
 
-print("VIJAY => ", vijay)
+'''
+
+Q.2. 
+values = [-2,5,-3,5,0,1,-5,9]
+
+
+output: 
+0 => -2 => Negative
+1 => 5 => Positive
+2 => -3 => Negative
+
+
+'''
