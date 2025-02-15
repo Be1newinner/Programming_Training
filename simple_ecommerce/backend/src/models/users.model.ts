@@ -36,6 +36,11 @@ const UserSchema = new Schema<UserStored>(
       enum: Object.values(ROLE),
       default: ROLE.CLIENT,
     },
+    password: {
+      type: String,
+      minlength: 6,
+      maxlength: 12,
+    },
   },
   {
     autoIndex: true,

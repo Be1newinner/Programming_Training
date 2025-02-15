@@ -5,6 +5,16 @@ import { productType, ProductModel } from "../models/products.model.ts";
 export async function GetListOfProducts(req: Request, res: Response) {
   try {
     const data = await ProductModel.find({}, "-_id").lean();
+
+    if (!data || !data.length) {
+      res.status(200).json({
+        error: null,
+        message: "Products not found!",
+        data: [],
+      });
+      return;
+    }
+
     res.status(200).json({
       error: null,
       message: "Products fetched successfully!",
@@ -13,7 +23,7 @@ export async function GetListOfProducts(req: Request, res: Response) {
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: error,
+      error: (error as Error).message,
       message: "Failed to fetch products",
       data: null,
     });
@@ -117,7 +127,7 @@ export async function AddSingleProductController(req: Request, res: Response) {
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: error,
+      error: (error as Error).message,
       message: "Failed to add product",
       data: null,
     });
@@ -156,7 +166,7 @@ export async function UpdateSingleProductController(
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: error,
+      error: (error as Error).message,
       message: "Failed to update product",
       data: null,
     });
@@ -183,7 +193,7 @@ export async function deleteProductByID(req: Request, res: Response) {
   } catch (error) {
     console.error(error);
     res.status(500).json({
-      error: error,
+      error: (error as Error).message,
       message: "Failed to delete product",
       data: null,
     });

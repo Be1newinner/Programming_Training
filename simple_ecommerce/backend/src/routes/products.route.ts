@@ -57,7 +57,7 @@ export const ProductRouter = Router();
 
 /**
  * @swagger
- * /api/products:
+ * /products:
  *   get:
  *     summary: Get all products
  *     tags: [Products]
@@ -76,7 +76,7 @@ ProductRouter.route("/").get(GetListOfProducts);
 
 /**
  * @swagger
- * /api/products:
+ * /products:
  *   post:
  *     summary: Add a single product
  *     tags: [Products]
@@ -96,7 +96,7 @@ ProductRouter.route("/").post(AddSingleProductController);
 
 /**
  * @swagger
- * /api/products:
+ * /products:
  *   patch:
  *     summary: Update a product by SKU
  *     tags: [Products]
@@ -116,7 +116,7 @@ ProductRouter.route("/").patch(UpdateSingleProductController);
 
 /**
  * @swagger
- * /api/products/bulk:
+ * /products/bulk:
  *   post:
  *     summary: Add multiple products at once
  *     tags: [Products]
@@ -138,7 +138,7 @@ ProductRouter.route("/bulk").post(AddListOfProductsController);
 
 /**
  * @swagger
- * /api/products/{sku}:
+ * /products/{sku}:
  *   get:
  *     summary: Get a product by SKU
  *     tags: [Products]
@@ -163,7 +163,7 @@ ProductRouter.route("/:sku").get(GetSingleProduct);
 
 /**
  * @swagger
- * /api/products/{sku}:
+ * /products/{sku}:
  *   delete:
  *     summary: Delete a product by SKU
  *     tags: [Products]

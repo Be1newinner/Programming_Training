@@ -3,10 +3,11 @@ dotenv.config();
 
 import express from "express";
 import ConnectDB from "./config/db.config.ts";
+
 import { ProductRouter } from "./routes/products.route.ts";
+import { AuthRouter } from "./routes/users.route.ts";
 
 import swaggerUi from "swagger-ui-express";
-// import swaggerDocument from "./swagger.json";
 import swaggerDocs from "swagger-jsdoc";
 
 const app = express();
@@ -20,23 +21,22 @@ app.get("/", function (req: express.Request, res: express.Response) {
 });
 
 app.use("/products", ProductRouter);
+app.use("/auth", AuthRouter);
 
 const options = {
   definition: {
     openapi: "3.1.0",
     info: {
-      title: "LogRocket Express API with Swagger",
+      title: "Simple Ecommerce",
       version: "0.1.0",
-      description:
-        "This is a simple CRUD API application made with Express and documented with Swagger",
+      description: "Simple Ecommerce Docs for Students to train them!",
       license: {
         name: "MIT",
         url: "https://spdx.org/licenses/MIT.html",
       },
       contact: {
-        name: "LogRocket",
-        url: "https://logrocket.com",
-        email: "info@email.com",
+        name: "Vijay Kumar",
+        email: "be1newinner@gmail.com",
       },
     },
     servers: [

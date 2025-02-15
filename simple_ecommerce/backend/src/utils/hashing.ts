@@ -11,6 +11,8 @@ export async function verifyHash(
   hashed: string
 ): Promise<boolean> {
   return argon2.verify(hashed, plainText).catch((err) => {
+    console.log(hashed, plainText);
+    console.error(err);
     throw new Error(`Hash verification failed: ${(err as Error).message}`);
   });
 }

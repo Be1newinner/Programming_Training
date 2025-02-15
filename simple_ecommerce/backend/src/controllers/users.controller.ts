@@ -18,14 +18,17 @@ export async function loginController(req: Request, res: Response) {
       return;
     }
 
+    console.log(user);
+
     const isPasswordValid = await verifyHash(password, user.password);
 
     if (!isPasswordValid) {
-      return res.status(401).json({
+      res.status(401).json({
         error: "Invalid credentials",
         message: "Invalid email or password!",
         data: null,
       });
+      return;
     }
 
     // ✅ Await the token generation (Fixes Promise issue)
@@ -38,7 +41,7 @@ export async function loginController(req: Request, res: Response) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = user;
 
-    return res.status(200).json({
+    res.status(200).json({
       error: null,
       message: "User logged in successfully!",
       data: { ...userWithoutPassword, ...tokens },
