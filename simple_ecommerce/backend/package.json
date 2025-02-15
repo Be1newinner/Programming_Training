@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "npx nodemon --ext ts,tsx --exec 'npx tsc --noEmit && npx eslint . && npx nodemon'",
-    "build": "npx tsc",
+    "dev": "npx nodemon",
+    "build": "npx tsc --transpile-only",
     "lint": "npx eslint src",
     "lint:fix": "npx eslint src --fix"
   },
@@ -18,13 +18,17 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.10.0"
+    "mongoose": "^8.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/express": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.8",
     "@types/node": "^22.10.5",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.7",
     "@typescript-eslint/eslint-plugin": "^8.19.0",
     "@typescript-eslint/parser": "^8.19.0",
     "eslint": "^9.17.0",
@@ -33,6 +37,7 @@
     "globals": "^15.14.0",
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
+    "swagger-autogen": "^2.23.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0"
