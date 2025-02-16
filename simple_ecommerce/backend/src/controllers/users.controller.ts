@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { UserModel, UserStored } from "../models/users.model.ts";
 import { verifyHash } from "../utils/hashing.ts";
-import { generateLoginTokens } from "../utils/tokens.ts";
 
 export async function loginController(req: Request, res: Response) {
   try {
@@ -18,8 +17,6 @@ export async function loginController(req: Request, res: Response) {
       return;
     }
 
-    console.log(user);
-
     const isPasswordValid = await verifyHash(password, user.password);
 
     if (!isPasswordValid) {
@@ -31,21 +28,16 @@ export async function loginController(req: Request, res: Response) {
       return;
     }
 
-    // ✅ Await the token generation (Fixes Promise issue)
-    const tokens = await generateLoginTokens({
-      email: user.email,
-      role: user.role,
-    });
-
-    // ✅ Remove password before sending response
+    // ✅ Remove sensitive data before sending response
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { password: _, ...userWithoutPassword } = user;
 
     res.status(200).json({
       error: null,
       message: "User logged in successfully!",
-      data: { ...userWithoutPassword, ...tokens },
+      data: userWithoutPassword,
     });
+    return;
   } catch (error) {
     const errorMessage = (error as Error).message || "Unexpected error!";
 

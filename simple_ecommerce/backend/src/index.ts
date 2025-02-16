@@ -2,6 +2,8 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import express from "express";
+import cookieParser from "cookie-parser";
+
 import ConnectDB from "./config/db.config.ts";
 
 import { ProductRouter } from "./routes/products.route.ts";
@@ -14,6 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.get("/", function (req: express.Request, res: express.Response) {
   res.send("Welcome to TypedHome!");
