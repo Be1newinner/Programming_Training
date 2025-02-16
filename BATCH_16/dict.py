@@ -131,8 +131,6 @@ Q.1.
  
 
 
-'''
-
 sentence = "The rock lives in mountains . The mountains lives in new york ." 
 ls = sentence.split(" ")
 data = {}
@@ -147,10 +145,8 @@ for x in ls:
 
 print(data)
 
-
-
 '''
-
+'''
 Q.2. 
 values = [-2,5,-3,5,0,1,-5,9]
 
@@ -161,4 +157,45 @@ output:
 2 => -3 => Negative
 
 
+
+Q.3.
+
+marks = {
+neha: 80,
+sanjay: 85,
+shruti: 20,
+vijay: 60,
+arun: 65,
+pankaj: 10
+}
+
+
+output: 
+
+passed students ( Greater than 50 ): 
+neha: 80
+sanjay: 85,
+vijay: 60,
+arun: 65,
+
+
+Q.4. 
+
+numbers = [10, 23, 5, 29, 18, 7, 11, 35]
+
+find Prime Numbers and Print in ascending order: 
+ 
+the prime numbers are: 
+5
+7
+11
+23
+29
+
+Total Count: 5
+Total Sum: 75
+Average: 15
+
 '''
+
+
