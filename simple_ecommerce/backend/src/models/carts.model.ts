@@ -1,4 +1,4 @@
-import { Document, model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 export type cartProductType = {
   title: string;
@@ -9,13 +9,19 @@ export type cartProductType = {
   sku: string;
 };
 
-export interface CartBase extends Document {
-  products: cartProductType[];
+export interface CartBase {
+  items: cartProductType[];
   total: number;
   subtotal: number;
   tax: number;
   discount: number;
   uid: string;
+  _id: string;
+}
+
+export interface cartProductWithID {
+  items: cartProductType[];
+  _id: string;
 }
 
 const ProductSchema = new Schema<cartProductType>(
@@ -34,12 +40,13 @@ const ProductSchema = new Schema<cartProductType>(
 
 const UserSchema = new Schema<CartBase>(
   {
-    products: { type: [ProductSchema], required: true },
+    items: { type: [ProductSchema], required: true },
     total: { type: Number, required: true, min: 0 },
     subtotal: { type: Number, required: true, min: 0 },
     tax: { type: Number, required: true, min: 0 },
     discount: { type: Number, required: true, min: 0 },
     uid: { type: String, required: true },
+    _id: { type: String },
   },
   {
     autoIndex: true,
