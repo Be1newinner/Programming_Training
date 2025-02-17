@@ -10,6 +10,14 @@ methods:
 6. pop(): Removes and returns a random element from the set. This is an unordered operation, so you can't predict which element will be removed.
 7. in operator
 8. type operator
+
+
+9. union(): Returns a new set that contains all elements from both sets (combining them).
+10. intersection(): Returns a new set that contains only the elements present in both sets (common elements).
+11. difference(): Returns a new set that contains all elements in the first set but not in the second set.
+12. symmetric_difference(): Returns a new set with elements that are in either of the sets, but not in both.
+
+
 '''
 
 ## unordered
