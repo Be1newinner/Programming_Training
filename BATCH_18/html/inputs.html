@@ -6,15 +6,44 @@
 
 <form>
 <label for="fullname">Full Name: </label>
-<input id="fullname" name="fullname" maxlength="14" minlength="3" required />
+<input type="text" id="fullname" name="fullname" maxlength="14" minlength="3" required placeholder="Type your full name" value="Vijay"/>
 
 <br />
 <br />
 
 <label for="phone">Phone Number: </label>
-<input type="number" id="phone" name="phone" min="6000000000" max="9999999999" required />
+<input type="number" id="phone" name="phone" min="6000000000" max="9999999999" placeholder="10 digit phone number" required />
 
 <br />
+<br />
+
+<div>
+
+<span>Gender: </span>
+
+<label for="gender_male">Male</label>
+<input type="radio" id="gender_male" name="gender" required checked value="male" />
+
+<label for="gender_female">Female</label>
+<input type="radio" id="gender_female" name="gender" required value="female" />
+
+</div>
+
+<br />
+
+<div>
+<span>Hobby: </span>
+
+<label for="hobby_music">Music</label>
+<input type="checkbox" id="hobby_music" name="hobby" value="music"/>
+
+<label for="hobby_singing">Singing</label>
+<input type="checkbox" id="hobby_singing" name="hobby" value="singing"/>
+
+<label for="hobby_dancing">Dancing</label>
+<input type="checkbox" id="hobby_dancing" name="hobby" value="dancing"/>
+</div>
+
 <br />
 
 <input type="reset" />
