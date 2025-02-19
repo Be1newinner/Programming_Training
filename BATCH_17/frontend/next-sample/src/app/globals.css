@@ -21,3 +21,8 @@ button {
     transform: translateX(2px) translateY(2px);
   }
 }
+
+input {
+  border: 1px solid gray;
+  padding: 5px 10px;
+}
